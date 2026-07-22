@@ -33,3 +33,51 @@ Lo que Beet **no** hace (fuera de alcance, al menos por ahora):
 ## Estado actual
 
 En reconstrucción activa (arquitectura v2). Aún no hay código en el repositorio — se está definiendo el diseño antes de implementar.
+
+beet/                          ← repo Git
+├── pyproject.toml             ← obligatorio
+├── README.md
+├── .gitignore
+├── beet-visor.py              ← entry point (standalone, sin imports de beet)
+├── beet-visor.bat             ← doble clic Windows
+│
+└── beet/                      ← paquete Python (MISMO NOMBRE que repo)
+    ├── __init__.py            ← obligatorio para que sea paquete
+    │
+    ├── core/                  ← modelos de dominio puros
+    │   ├── __init__.py
+    │   ├── partido.py
+    │   ├── cuota.py
+    │   ├── historial_equipo.py
+    │   └── normalizacion.py
+    │
+    ├── ingest/                ← pipeline de ingesta
+    │   ├── __init__.py
+    │   ├── agrupador.py
+    │   └── parsers/
+    │       ├── __init__.py
+    │       ├── imagen.py      ← OCR local con pytesseract
+    │       └── pdf.py         ← pdfplumber
+    │
+    ├── ui/                    ← interfaz PyQt6
+    │   ├── __init__.py
+    │   ├── __main__.py        ← python -m beet.ui
+    │   ├── main_window.py
+    │   └── widgets/
+    │       ├── __init__.py
+    │       ├── log_panel.py
+    │       ├── partido_list.py
+    │       ├── historial_tab.py
+    │       └── cuotas_tab.py
+    │
+    ├── controllers/             ← orquestación UI ↔ servicios
+    │   ├── __init__.py
+    │   └── visor_controller.py  ← QThreadPool + Workers
+    │
+    ├── services/              ← reservado para futuro
+    │   └── __init__.py
+    │
+    └── tests/
+        ├── __init__.py
+        ├── test_core.py
+        └── fixtures/

@@ -9,7 +9,7 @@ Estrategia:
 """
 import re
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import List, Tuple, Optional
 import logging

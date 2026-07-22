@@ -52,3 +52,17 @@ NOMBRES_CANONICOS: dict[str, str] = {}
 def nombre_canonico(nombre: str) -> str:
     """Devuelve el nombre canónico si existe una entrada mapeada; si no, el original."""
     return NOMBRES_CANONICOS.get(nombre, nombre)
+
+
+def normalizar_nombre(nombre: str) -> str:
+    """
+    Normaliza un nombre de equipo extraído por OCR para uso en el pipeline
+    (comparación, almacenamiento en PartidoHistorico/HistorialEquipo, etc.).
+
+    Mantiene UTF-8 (Bodø, Lillestrøm) — NO usar `normalizar_para_comparar`
+    aquí, que elimina diacríticos y perdería información. Solo colapsa
+    espacios repetidos (artefacto común de OCR) y aplica el mapeo de
+    nombres canónicos cuando existe una entrada para ese nombre.
+    """
+    nombre = re.sub(r"\s+", " ", nombre.strip())
+    return nombre_canonico(nombre)
