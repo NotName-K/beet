@@ -11,6 +11,7 @@ La fuente principal de datos es **Adam Choi** (como se ha usado hasta ahora), pe
 El objetivo no es solo "encontrar cuotas mal calibradas" — es que la predicción en sí sea lo más precisa posible, y que el valor esperado surja de ahí. Cada predicción se puede verificar después contra el resultado real, y esa verificación retroalimenta el propio modelo (backtesting → calibración empírica → mejores predicciones).
 
 Aunque hoy es una herramienta de análisis, la meta de fondo es que llegue a ser lo bastante confiable como para usarse con apuestas reales — no se descarta automatizar más adelante si la precisión lo justifica.
+1234::dk
 
 ## Alcance
 
