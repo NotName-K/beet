@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QFileDialog, QTabWidget, QMessageBox,
@@ -10,6 +12,15 @@ from beet.ui.widgets.log_panel import LogPanel
 from beet.ui.widgets.partido_list import PartidoList
 from beet.ui.widgets.historial_tab import HistorialTab
 from beet.ui.widgets.cuotas_tab import CuotasTab
+
+
+def _carpeta_downloads() -> Path:
+    """
+    Carpeta de Descargas del usuario actual (multiplataforma). No hay una
+    API estándar de Qt/Python para esto — Windows, macOS y la mayoría de
+    distros Linux usan `~/Downloads` por convención.
+    """
+    return Path.home() / "Downloads"
 
 
 class MainWindow(QMainWindow):
@@ -25,11 +36,17 @@ class MainWindow(QMainWindow):
         self.resize(1200, 800)
 
         self._ultimo_lote_por_clave = {}
+        self._carpeta_actual = _carpeta_downloads()
 
         self.controller = VisorController()
 
         self._setup_ui()
         self._conectar_senales()
+
+        # Cargar Downloads automáticamente al abrir la app, si existe.
+        if self._carpeta_actual.is_dir():
+            self.label_ruta.setText(str(self._carpeta_actual))
+            self.controller.cargar_carpeta(str(self._carpeta_actual))
 
     # ------------------------------------------------------------------
     # Construcción de la interfaz
@@ -88,10 +105,11 @@ class MainWindow(QMainWindow):
     # ------------------------------------------------------------------
     def _on_abrir_carpeta(self):
         ruta = QFileDialog.getExistingDirectory(
-            self, "Seleccionar carpeta con partidos"
+            self, "Seleccionar carpeta con partidos", str(self._carpeta_actual)
         )
         if not ruta:
             return
+        self._carpeta_actual = Path(ruta)
         self.label_ruta.setText(ruta)
         self.controller.cargar_carpeta(ruta)
 
