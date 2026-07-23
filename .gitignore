@@ -49,3 +49,7 @@ capturas/
 # Coverage
 htmlcov/
 .coverage
+
+# Datos persistentes (opcional: puedes versionarlos si quieres)
+data/partidos/
+*.csv

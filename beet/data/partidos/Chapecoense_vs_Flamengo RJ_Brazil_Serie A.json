@@ -1,0 +1,677 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-22T22:02:28.086300",
+    "clave": "Chapecoense_vs_Flamengo RJ_Brazil_Serie A"
+  },
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Serie A",
+    "equipo_local_nombre": "Chapecoense",
+    "equipo_visitante_nombre": "Flamengo",
+    "historial_local": {
+      "equipo": "Chapecoense",
+      "partidos": [
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Remo",
+          "marcador": [
+            3,
+            9
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            5,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-18",
+          "competicion": "Serie A",
+          "rival": "Botafogo",
+          "marcador": [
+            4,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Serie A",
+          "rival": "Vitória",
+          "marcador": [
+            9,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-02",
+          "competicion": "Serie A",
+          "rival": "Atlético Mineiro",
+          "marcador": [
+            7,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Flamengo",
+      "partidos": [
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Athletico PR",
+          "marcador": [
+            7,
+            9
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-10",
+          "competicion": "Serie A",
+          "rival": "Grêmio",
+          "marcador": [
+            6,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Serie A",
+          "rival": "Atlético Mineiro",
+          "marcador": [
+            1,
+            8
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-12",
+          "competicion": "Serie A",
+          "rival": "Fluminense",
+          "marcador": [
+            2,
+            8
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-02",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            5,
+            7
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-22",
+          "competicion": "Serie A",
+          "rival": "Corinthians",
+          "marcador": [
+            2,
+            6
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-14",
+          "competicion": "Serie A",
+          "rival": "Botafogo",
+          "marcador": [
+            4,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-10",
+          "competicion": "Serie A",
+          "rival": "Vitória",
+          "marcador": [
+            2,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-01-28",
+          "competicion": "Serie A",
+          "rival": "São Paulo",
+          "marcador": [
+            6,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-12-06",
+          "competicion": "Serie A",
+          "rival": "Mirassol",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-22T22:02:26.382575",
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Serie A",
+    "equipo_local_nombre": "Chapecoense",
+    "equipo_visitante_nombre": "Flamengo",
+    "historial_local": {
+      "equipo": "Chapecoense",
+      "partidos": [
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Remo",
+          "marcador": [
+            2,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-18",
+          "competicion": "Serie A",
+          "rival": "Botafogo",
+          "marcador": [
+            1,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Serie A",
+          "rival": "Vitória",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-02",
+          "competicion": "Serie A",
+          "rival": "Atlético Mineiro",
+          "marcador": [
+            0,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Flamengo",
+      "partidos": [
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Athletico PR",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-10",
+          "competicion": "Serie A",
+          "rival": "Grêmio",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Serie A",
+          "rival": "Atlético Mineiro",
+          "marcador": [
+            4,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-12",
+          "competicion": "Serie A",
+          "rival": "Fluminense",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-02",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-22",
+          "competicion": "Serie A",
+          "rival": "Corinthians",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-14",
+          "competicion": "Serie A",
+          "rival": "Botafogo",
+          "marcador": [
+            3,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-10",
+          "competicion": "Serie A",
+          "rival": "Vitória",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-01-28",
+          "competicion": "Serie A",
+          "rival": "São Paulo",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-12-06",
+          "competicion": "Serie A",
+          "rival": "Mirassol",
+          "marcador": [
+            3,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-22T22:02:26.663604",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Chapecoense",
+        "valor": 7.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 4.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Flamengo",
+        "valor": 1.44,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 1.98,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.74,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 0.5",
+        "valor": 11.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 0.5",
+        "valor": 1.05,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 1.5",
+        "valor": 3.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 1.5",
+        "valor": 1.26,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 2.5",
+        "valor": 1.91,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 2.5",
+        "valor": 1.85,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 3.5",
+        "valor": 1.33,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 3.5",
+        "valor": 3.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Under 0.5",
+        "valor": 1.9,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Over 0.5",
+        "valor": 1.74,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Under 1.5",
+        "valor": 1.14,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Over 1.5",
+        "valor": 4.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Under 0.5",
+        "valor": 6.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Over 0.5",
+        "valor": 1.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Under 1.5",
+        "valor": 2.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Over 1.5",
+        "valor": 1.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Chapecoense or Draw",
+        "valor": 2.63,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Flamengo or Draw",
+        "valor": 1.09,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Chapecoense or Flamengo",
+        "valor": 1.18,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.22,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 2.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 2.08,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.43,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.26,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 3.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 1.65,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 2.02,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 2.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 3.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Corners Over 3.5",
+        "valor": 1.81,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Corners Over 4.5",
+        "valor": 2.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Corners Over 5.5",
+        "valor": 3.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Corners Over 6.5",
+        "valor": 5.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Corners Over 3.5",
+        "valor": 1.14,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Corners Over 4.5",
+        "valor": 1.32,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Corners Over 5.5",
+        "valor": 1.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Corners Over 6.5",
+        "valor": 2.02,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Corners Under 3.5",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Corners Under 5.5",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Flamengo - Corners Under 6.5",
+        "valor": 1.67,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Chapecoense - Corners Over 2.5",
+        "valor": 1.36,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-22T22:02:28.086338"
+}

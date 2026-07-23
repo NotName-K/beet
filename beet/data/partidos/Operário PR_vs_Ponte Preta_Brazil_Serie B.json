@@ -1,0 +1,671 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-22T22:02:51.348993",
+    "clave": "Operário PR_vs_Ponte Preta_Brazil_Serie B"
+  },
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Serie B",
+    "equipo_local_nombre": "Operário PR",
+    "equipo_visitante_nombre": "Ponte Preta",
+    "historial_local": {
+      "equipo": "Operário PR",
+      "partidos": [
+        {
+          "fecha": "2026-07-12",
+          "competicion": "Serie B",
+          "rival": "Novorizontino",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-27",
+          "competicion": "Serie B",
+          "rival": "América Mineiro",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-05",
+          "competicion": "Serie B",
+          "rival": "Juventude",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-24",
+          "competicion": "Serie B",
+          "rival": "Criciúma",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-16",
+          "competicion": "Serie B",
+          "rival": "Náutico",
+          "marcador": [
+            2,
+            6
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Serie B",
+          "rival": "Londrina",
+          "marcador": [
+            3,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Serie B",
+          "rival": "Fortaleza",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-12",
+          "competicion": "Serie B",
+          "rival": "Cuiabá",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-21",
+          "competicion": "Serie B",
+          "rival": "Atlético GO",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-23",
+          "competicion": "Serie B",
+          "rival": "Ferroviária",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Ponte Preta",
+      "partidos": [
+        {
+          "fecha": "2026-07-02",
+          "competicion": "Serie B",
+          "rival": "Fortaleza",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-06-28",
+          "competicion": "Serie B",
+          "rival": "Atlético GO",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-06-14",
+          "competicion": "Serie B",
+          "rival": "Juventude",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-24",
+          "competicion": "Serie B",
+          "rival": "CRB",
+          "marcador": [
+            2,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Serie B",
+          "rival": "São Bernardo",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-22T22:02:49.736746",
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Serie B",
+    "equipo_local_nombre": "Operário PR",
+    "equipo_visitante_nombre": "Ponte Preta",
+    "historial_local": {
+      "equipo": "Operário PR",
+      "partidos": [
+        {
+          "fecha": "2026-07-12",
+          "competicion": "Serie B",
+          "rival": "Novorizontino",
+          "marcador": [
+            10,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-27",
+          "competicion": "Serie B",
+          "rival": "América Mineiro",
+          "marcador": [
+            7,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-05",
+          "competicion": "Serie B",
+          "rival": "Juventude",
+          "marcador": [
+            4,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-24",
+          "competicion": "Serie B",
+          "rival": "Criciúma",
+          "marcador": [
+            8,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-16",
+          "competicion": "Serie B",
+          "rival": "Náutico",
+          "marcador": [
+            7,
+            5
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Serie B",
+          "rival": "Londrina",
+          "marcador": [
+            5,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Serie B",
+          "rival": "Fortaleza",
+          "marcador": [
+            11,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-12",
+          "competicion": "Serie B",
+          "rival": "Cuiabá",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-21",
+          "competicion": "Serie B",
+          "rival": "Atlético GO",
+          "marcador": [
+            7,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-23",
+          "competicion": "Serie B",
+          "rival": "Ferroviária",
+          "marcador": [
+            10,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Ponte Preta",
+      "partidos": [
+        {
+          "fecha": "2026-07-02",
+          "competicion": "Serie B",
+          "rival": "Fortaleza",
+          "marcador": [
+            4,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-28",
+          "competicion": "Serie B",
+          "rival": "Atlético GO",
+          "marcador": [
+            5,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-14",
+          "competicion": "Serie B",
+          "rival": "Juventude",
+          "marcador": [
+            2,
+            7
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-24",
+          "competicion": "Serie B",
+          "rival": "CRB",
+          "marcador": [
+            5,
+            12
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Serie B",
+          "rival": "São Bernardo",
+          "marcador": [
+            6,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-22T22:02:49.833799",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Operário PR",
+        "valor": 1.38,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Draw",
+        "valor": 4.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta",
+        "valor": 8.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.64,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 0.5 Goals",
+        "valor": 11.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 0.5 Goals",
+        "valor": 1.05,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 1.5 Goals",
+        "valor": 3.65,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 1.5 Goals",
+        "valor": 1.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 2.5 Goals",
+        "valor": 1.88,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 2.5 Goals",
+        "valor": 1.84,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 3.5 Goals",
+        "valor": 1.32,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 3.5 Goals",
+        "valor": 3.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Under 0.5",
+        "valor": 7.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Over 0.5",
+        "valor": 1.09,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Under 1.5",
+        "valor": 2.37,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Over 1.5",
+        "valor": 1.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Under 0.5",
+        "valor": 1.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Over 0.5",
+        "valor": 1.87,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Under 1.5",
+        "valor": 1.12,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Over 1.5",
+        "valor": 5.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR or Draw",
+        "valor": 1.07,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta or Draw",
+        "valor": 2.9,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR or Ponte Preta",
+        "valor": 1.18,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.21,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 2.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.71,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.45,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 3.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.38,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 1.63,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 1.98,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 2.48,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 3.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Corners Over 3.5",
+        "valor": 1.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Corners Over 4.5",
+        "valor": 1.32,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Corners Over 5.5",
+        "valor": 1.58,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Corners Over 6.5",
+        "valor": 1.98,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Corners Over 3.5",
+        "valor": 1.87,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Corners Over 4.5",
+        "valor": 2.65,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Corners Over 5.5",
+        "valor": 3.85,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Corners Over 6.5",
+        "valor": 5.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Operário PR - Corners Under 6.5",
+        "valor": 1.91,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Corners Under 3.5",
+        "valor": 1.73,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Ponte Preta - Corners Over 2.5",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-22T22:02:51.349032"
+}

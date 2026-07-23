@@ -1,32 +1,47 @@
 """
-Lista de partidos agrupados (uno por LoteIngesta). Al seleccionar uno,
-emite la señal `partido_seleccionado(clave, lote)` para que MainWindow
-se la pase al controller.
+Lista de partidos detectados en la carpeta.
+Muestra indicador visual (✓) si el partido ya tiene datos persistentes.
 """
 from PyQt6.QtWidgets import QListWidget, QListWidgetItem
 from PyQt6.QtCore import pyqtSignal, Qt
-
+from beet.ingest import LoteIngesta
+from beet.data import partido_procesado
 
 class PartidoList(QListWidget):
-
-    partido_seleccionado = pyqtSignal(str, object)  # clave, LoteIngesta
+    partido_seleccionado = pyqtSignal(str, object)
 
     def __init__(self):
         super().__init__()
-        self._lotes: dict = {}
+        self._lotes: dict[str, LoteIngesta] = {}
         self.itemClicked.connect(self._on_item_clicked)
 
-    def set_lotes(self, lotes: dict):
-        """Reemplaza el contenido de la lista con los lotes recién cargados."""
-        self._lotes = lotes
+    def set_lotes(self, lotes: dict[str, LoteIngesta]):
         self.clear()
-        for clave in sorted(lotes.keys()):
-            item = QListWidgetItem(clave)
-            item.setData(Qt.ItemDataRole.UserRole, clave)
+        self._lotes = lotes
+        
+        for clave, lote in lotes.items():
+            # Verificar si ya tiene datos persistentes
+            tiene_datos = partido_procesado(clave)
+            
+            # Crear item con indicador visual
+            if tiene_datos:
+                texto = f"✓ {clave}"
+            else:
+                texto = clave
+            
+            item = QListWidgetItem(texto)
+            
+            # Marcar visualmente los que ya tienen datos
+            if tiene_datos:
+                item.setForeground(Qt.GlobalColor.darkGreen)
+            
             self.addItem(item)
 
     def _on_item_clicked(self, item: QListWidgetItem):
-        clave = item.data(Qt.ItemDataRole.UserRole)
-        lote = self._lotes.get(clave)
-        if lote is not None:
-            self.partido_seleccionado.emit(clave, lote)
+        texto = item.text()
+        # Quitar el indicador "✓ " si existe
+        if texto.startswith("✓ "):
+            texto = texto[2:]
+        
+        if texto in self._lotes:
+            self.partido_seleccionado.emit(texto, self._lotes[texto])

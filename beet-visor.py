@@ -13,14 +13,12 @@ if script_dir not in sys.path:
 from PyQt6.QtWidgets import QApplication
 from beet.ui import MainWindow  # import absoluto estándar
 
-
 def main():
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
-
 
 if __name__ == "__main__":
     main()

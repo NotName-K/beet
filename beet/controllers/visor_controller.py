@@ -2,7 +2,6 @@ import sys
 import traceback
 import time
 from typing import Optional
-
 from PyQt6.QtCore import QThreadPool, QRunnable, QObject, pyqtSignal, pyqtSlot
 
 from beet.ingest import (
@@ -13,27 +12,15 @@ from beet.ingest import (
 )
 from beet.ingest.parsers.imagen import ResultadoParseoImagen
 from beet.ingest.parsers.pdf import ResultadoParseoPDF
-
+from beet.data import guardar_partido, cargar_partido, partido_procesado
 
 class WorkerSignals(QObject):
-    """Señales que expone un Worker en ejecución dentro del QThreadPool."""
-
     finished = pyqtSignal()
-    error = pyqtSignal(tuple)      # (exctype, value, traceback_str)
-    result = pyqtSignal(object)    # resultado de la función
-    tiempo = pyqtSignal(float)     # tiempo de ejecución en ms
-
+    error = pyqtSignal(tuple)
+    result = pyqtSignal(object)
+    tiempo = pyqtSignal(float)
 
 class Worker(QRunnable):
-    """
-    Ejecuta una función arbitraria en un hilo del QThreadPool.
-
-    NOTA: QThreadPool.start() requiere una instancia de QRunnable (no QObject
-    puro), por eso Worker hereda de QRunnable y delega las señales a un
-    WorkerSignals(QObject) interno — QRunnable no puede emitir señales por sí
-    mismo.
-    """
-
     def __init__(self, fn, *args, **kwargs):
         super().__init__()
         self.fn = fn
@@ -57,32 +44,41 @@ class Worker(QRunnable):
             self.signals.tiempo.emit((t1 - t0) * 1000)
             self.signals.finished.emit()
 
-
 class VisorController(QObject):
-    """
-    Orquesta la interacción entre la UI y los servicios de ingesta.
-    Ejecuta los parsers en hilos de fondo (QThreadPool) para no bloquear
-    la interfaz, y comunica resultados a la UI vía señales.
-    """
-
-    lotes_cargados = pyqtSignal(dict)            # {clave: LoteIngesta}
-    historial_listo = pyqtSignal(object, float)  # ResultadoParseoImagen, tiempo_ms
-    cuotas_listo = pyqtSignal(object, float)      # ResultadoParseoPDF, tiempo_ms
-    error_ocurrido = pyqtSignal(str)              # mensaje de error
-    log_mensaje = pyqtSignal(str)                 # mensaje para el log
+    lotes_cargados = pyqtSignal(dict)
+    historial_goles_listo = pyqtSignal(object, float)
+    historial_corners_listo = pyqtSignal(object, float)
+    cuotas_listo = pyqtSignal(object, float)
+    error_ocurrido = pyqtSignal(str)
+    log_mensaje = pyqtSignal(str)
 
     def __init__(self):
         super().__init__()
         self.threadpool = QThreadPool()
+        # Limitamos la concurrencia: solo hay 2 API keys de Gemini rotando,
+        # lanzar 20-30 workers en paralelo durante el auto-escaneo satura
+        # la cuota y provoca fallos silenciosos que quedaban cacheados como
+        # "procesado" sin datos.
+        self.threadpool.setMaxThreadCount(3)
         self.lotes: dict[str, LoteIngesta] = {}
-        # Acumula resultado/tiempo por worker mientras llegan sus señales,
-        # ya que result y tiempo se emiten por separado y no en el mismo
-        # instante (result primero, tiempo después).
         self._pendientes: dict[int, dict] = {}
 
-    # ------------------------------------------------------------------
-    # Carga de carpeta
-    # ------------------------------------------------------------------
+    @staticmethod
+    def _resultado_tiene_datos(resultado) -> bool:
+        """
+        True si el resultado cacheado realmente tiene historial parseado.
+        Antes, un resultado_goles guardado con historial_local=None /
+        historial_visitante=None (por un fallo de parseo que no lanzó
+        excepción, o que sí la lanzó y quedó en 'errores') se trataba como
+        'ya resuelto' y nunca se reintentaba.
+        """
+        if resultado is None:
+            return False
+        local = getattr(resultado, "historial_local", None)
+        visitante = getattr(resultado, "historial_visitante", None)
+        n = (len(local.partidos) if local else 0) + (len(visitante.partidos) if visitante else 0)
+        return n > 0
+
     def cargar_carpeta(self, ruta: str):
         self.log_mensaje.emit(f"Escaneando carpeta: {ruta}")
         try:
@@ -90,56 +86,105 @@ class VisorController(QObject):
         except Exception:
             tb = traceback.format_exc()
             self.log_mensaje.emit(tb)
-            self.error_ocurrido.emit(
-                f"No se pudo agrupar el lote en '{ruta}':\n{tb}"
-            )
+            self.error_ocurrido.emit(f"No se pudo agrupar el lote en '{ruta}':\n{tb}")
             return
-
-        self.log_mensaje.emit(
-            f"Se encontraron {len(self.lotes)} partido(s) en '{ruta}'"
-        )
+        self.log_mensaje.emit(f"Se encontraron {len(self.lotes)} partido(s) en '{ruta}'")
         self.lotes_cargados.emit(self.lotes)
+        
+        # Auto-escaneo
+        self.log_mensaje.emit("Iniciando escaneo automático de todos los partidos...")
+        for clave, lote in self.lotes.items():
+            self.procesar_partido(clave, lote)
 
-    # ------------------------------------------------------------------
-    # Procesamiento de un partido seleccionado
-    # ------------------------------------------------------------------
     def procesar_partido(self, clave: str, lote: LoteIngesta):
-        self.log_mensaje.emit(f"Procesando partido: {clave}")
+        self.log_mensaje.emit(f"Verificando partido: {clave}")
+        
+        datos_existentes = cargar_partido(clave) or {}
+        
+        archivos_faltantes = lote.archivos_faltantes()
+        if archivos_faltantes:
+            self.log_mensaje.emit(f"⚠️ {clave}: Faltan archivos: {', '.join(archivos_faltantes)}")
 
-        if getattr(lote, "imagen_corners", None):
+        # GOLES
+        goles_cache = datos_existentes.get("goles")
+        goles_valido = self._resultado_tiene_datos(goles_cache)
+        if not goles_valido and getattr(lote, "imagen_resultado", None):
+            if goles_cache is not None:
+                self.log_mensaje.emit(
+                    f"⟳ Goles cacheados sin datos (posible error previo) para {clave}, reprocesando..."
+                )
+                if goles_cache.errores:
+                    self.log_mensaje.emit(f"   Errores previos: {'; '.join(goles_cache.errores)}")
+            self._ejecutar_worker(
+                fn=parsear_imagen_historial,
+                args=(lote.imagen_resultado,),
+                on_success=lambda r, t: self._on_goles_result(clave, r, t),
+                on_error=self._on_goles_error,
+                descripcion=f"goles ({clave})",
+            )
+        elif goles_valido:
+            self.log_mensaje.emit(f"✓ Goles ya en datos persistentes: {clave}")
+            self.historial_goles_listo.emit(goles_cache, 0.0)
+        else:
+            self.log_mensaje.emit(f"⚠️ No se puede procesar goles: falta archivo en {clave}")
+
+        # CORNERS
+        corners_cache = datos_existentes.get("corners")
+        corners_valido = self._resultado_tiene_datos(corners_cache)
+        if not corners_valido and getattr(lote, "imagen_corners", None):
+            if corners_cache is not None:
+                self.log_mensaje.emit(
+                    f"⟳ Corners cacheados sin datos (posible error previo) para {clave}, reprocesando..."
+                )
+                if corners_cache.errores:
+                    self.log_mensaje.emit(f"   Errores previos: {'; '.join(corners_cache.errores)}")
             self._ejecutar_worker(
                 fn=parsear_imagen_historial,
                 args=(lote.imagen_corners,),
-                on_success=self._on_historial_result,
-                on_error=self._on_historial_error,
-                descripcion=f"historial ({clave})",
+                on_success=lambda r, t: self._on_corners_result(clave, r, t),
+                on_error=self._on_corners_error,
+                descripcion=f"corners ({clave})",
             )
+        elif corners_valido:
+            self.log_mensaje.emit(f"✓ Corners ya en datos persistentes: {clave}")
+            self.historial_corners_listo.emit(corners_cache, 0.0)
+        else:
+            self.log_mensaje.emit(f"⚠️ No se puede procesar corners: falta archivo en {clave}")
 
-        if getattr(lote, "pdf_odds", None):
+        # CUOTAS
+        cuotas_cache = datos_existentes.get("cuotas")
+        cuotas_valido = bool(cuotas_cache and getattr(cuotas_cache, "cuotas", None))
+        if not cuotas_valido and getattr(lote, "pdf_odds", None):
+            if cuotas_cache is not None:
+                self.log_mensaje.emit(
+                    f"⟳ Cuotas cacheadas sin datos (posible error previo) para {clave}, reprocesando..."
+                )
             self._ejecutar_worker(
                 fn=parsear_pdf_cuotas,
                 args=(lote.pdf_odds,),
-                on_success=self._on_cuotas_result,
+                on_success=lambda r, t: self._on_cuotas_result(clave, r, t),
                 on_error=self._on_cuotas_error,
                 descripcion=f"cuotas ({clave})",
             )
+        elif cuotas_valido:
+            self.log_mensaje.emit(f"✓ Cuotas ya en datos persistentes: {clave}")
+            self.cuotas_listo.emit(cuotas_cache, 0.0)
+        else:
+            self.log_mensaje.emit(f"️ No se puede procesar cuotas: falta archivo en {clave}")
 
-    # ------------------------------------------------------------------
-    # Factory de workers
-    # ------------------------------------------------------------------
     def _ejecutar_worker(self, fn, args, on_success, on_error, descripcion: str):
         worker = Worker(fn, *args)
         clave_worker = id(worker)
         self._pendientes[clave_worker] = {}
-
+        
         def _guardar_resultado(resultado):
             self._pendientes[clave_worker]["resultado"] = resultado
             self._intentar_completar(clave_worker, on_success)
-
+        
         def _guardar_tiempo(ms):
             self._pendientes[clave_worker]["tiempo_ms"] = ms
             self._intentar_completar(clave_worker, on_success)
-
+        
         def _manejar_error(error_tuple):
             self._pendientes.pop(clave_worker, None)
             on_error(error_tuple)
@@ -150,13 +195,10 @@ class VisorController(QObject):
         worker.signals.finished.connect(
             lambda: self.log_mensaje.emit(f"Finalizado: {descripcion}")
         )
-
         self.log_mensaje.emit(f"Iniciando en background: {descripcion}")
         self.threadpool.start(worker)
 
     def _intentar_completar(self, clave_worker: int, on_success):
-        """Llama on_success(resultado, tiempo_ms) solo cuando ya llegaron
-        tanto el resultado como el tiempo de ejecución del worker."""
         estado = self._pendientes.get(clave_worker)
         if estado is None:
             return
@@ -164,21 +206,26 @@ class VisorController(QObject):
             self._pendientes.pop(clave_worker, None)
             on_success(estado["resultado"], estado["tiempo_ms"])
 
-    # ------------------------------------------------------------------
-    # Callbacks finales — resultados de historial (imagen)
-    # ------------------------------------------------------------------
-    def _on_historial_result(self, resultado: ResultadoParseoImagen, tiempo_ms: float):
-        self.historial_listo.emit(resultado, tiempo_ms)
+    def _on_goles_result(self, clave: str, resultado: ResultadoParseoImagen, tiempo_ms: float):
+        guardar_partido(clave, resultado_goles=resultado)
+        self.historial_goles_listo.emit(resultado, tiempo_ms)
 
-    def _on_historial_error(self, error_tuple):
+    def _on_goles_error(self, error_tuple):
         exctype, value, tb = error_tuple
         self.log_mensaje.emit(tb)
-        self.error_ocurrido.emit(f"Error al parsear historial:\n{tb}")
+        self.error_ocurrido.emit(f"Error al parsear goles:\n{tb}")
 
-    # ------------------------------------------------------------------
-    # Callbacks finales — resultados de cuotas (PDF)
-    # ------------------------------------------------------------------
-    def _on_cuotas_result(self, resultado: ResultadoParseoPDF, tiempo_ms: float):
+    def _on_corners_result(self, clave: str, resultado: ResultadoParseoImagen, tiempo_ms: float):
+        guardar_partido(clave, resultado_corners=resultado)
+        self.historial_corners_listo.emit(resultado, tiempo_ms)
+
+    def _on_corners_error(self, error_tuple):
+        exctype, value, tb = error_tuple
+        self.log_mensaje.emit(tb)
+        self.error_ocurrido.emit(f"Error al parsear corners:\n{tb}")
+
+    def _on_cuotas_result(self, clave: str, resultado: ResultadoParseoPDF, tiempo_ms: float):
+        guardar_partido(clave, resultado_cuotas=resultado)
         self.cuotas_listo.emit(resultado, tiempo_ms)
 
     def _on_cuotas_error(self, error_tuple):

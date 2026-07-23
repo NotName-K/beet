@@ -1,0 +1,776 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-22T22:02:48.037120",
+    "clave": "Manta_vs_LDU Quito_Ecuador_Liga Pro"
+  },
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Liga Pro",
+    "equipo_local_nombre": "Manta",
+    "equipo_visitante_nombre": "LDU Quito",
+    "historial_local": {
+      "equipo": "Manta",
+      "partidos": [
+        {
+          "fecha": "2026-07-14",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            6,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-07-11",
+          "competicion": "Liga Pro",
+          "rival": "Orense",
+          "marcador": [
+            4,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-30",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            8,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            6,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-10",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            4,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-27",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            7,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-19",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            6,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Liga Pro",
+          "rival": "Técnico Universitario",
+          "marcador": [
+            10,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-18",
+          "competicion": "Liga Pro",
+          "rival": "Guayaquil City",
+          "marcador": [
+            3,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-02",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "LDU Quito",
+      "partidos": [
+        {
+          "fecha": "2026-07-15",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            7,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-07-05",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            7,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-23",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            2,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-11",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            6,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-25",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            4,
+            9
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-19",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            1,
+            18
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-10",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            11,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-17",
+          "competicion": "Liga Pro",
+          "rival": "Leones del Norte",
+          "marcador": [
+            5,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-07",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            4,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-20",
+          "competicion": "Liga Pro",
+          "rival": "Orense",
+          "marcador": [
+            2,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-22T22:02:45.236426",
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Liga Pro",
+    "equipo_local_nombre": "Manta",
+    "equipo_visitante_nombre": "LDU Quito",
+    "historial_local": {
+      "equipo": "Manta",
+      "partidos": [
+        {
+          "fecha": "2026-07-14",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-07-11",
+          "competicion": "Liga Pro",
+          "rival": "Orense",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-30",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-10",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-27",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-19",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Liga Pro",
+          "rival": "Técnico Universitario",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-18",
+          "competicion": "Liga Pro",
+          "rival": "Guayaquil City",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-02",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "LDU Quito",
+      "partidos": [
+        {
+          "fecha": "2026-07-15",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-07-05",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-23",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-11",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            3,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-25",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-19",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-10",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-17",
+          "competicion": "Liga Pro",
+          "rival": "Leones del Norte",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-07",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-20",
+          "competicion": "Liga Pro",
+          "rival": "Orense",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-22T22:02:46.092206",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Manta",
+        "valor": 4.9,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 3.45,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Result - LDU Quito",
+        "valor": 1.7,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 2.05,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.66,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 0.5",
+        "valor": 8.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 0.5",
+        "valor": 1.08,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 1.5",
+        "valor": 2.8,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 1.5",
+        "valor": 1.36,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 2.5",
+        "valor": 1.6,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 2.5",
+        "valor": 2.15,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 3.5",
+        "valor": 1.2,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 3.5",
+        "valor": 3.85,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Under 0.5",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Over 0.5",
+        "valor": 1.68,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Under 1.5",
+        "valor": 1.18,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Over 1.5",
+        "valor": 4.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Under 0.5",
+        "valor": 4.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Over 0.5",
+        "valor": 1.22,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Under 1.5",
+        "valor": 1.66,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Over 1.5",
+        "valor": 1.93,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Manta or Draw",
+        "valor": 2.0,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - LDU Quito or Draw",
+        "valor": 1.13,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Manta or LDU Quito",
+        "valor": 1.29,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.35,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 2.16,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 1.73,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.46,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.28,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.18,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 2.88,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.58,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 1.95,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 2.48,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 3.25,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 4.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Over 3.5 Corners",
+        "valor": 1.81,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Over 4.5 Corners",
+        "valor": 2.5,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Over 4.5 Corners",
+        "valor": 1.56,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Over 5.5 Corners",
+        "valor": 1.98,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Over 6.5 Corners",
+        "valor": 2.63,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Under 3.5 Corners",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "LDU Quito - Under 5.5 Corners",
+        "valor": 1.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Manta - Over 2.5 Corners",
+        "valor": 1.37,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Most Corners - Manta",
+        "valor": 2.8,
+        "casa_origen": "Unibet",
+        "valida": true
+      },
+      {
+        "mercado": "Most Corners - LDU Quito",
+        "valor": 1.49,
+        "casa_origen": "Unibet",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners",
+      "Most Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-22T22:02:48.037171"
+}
