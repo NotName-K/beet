@@ -1,6 +1,7 @@
 import sys
 import traceback
 import time
+import itertools
 from typing import Optional
 from PyQt6.QtCore import QThreadPool, QRunnable, QObject, pyqtSignal, pyqtSlot
 
@@ -46,9 +47,13 @@ class Worker(QRunnable):
 
 class VisorController(QObject):
     lotes_cargados = pyqtSignal(dict)
-    historial_goles_listo = pyqtSignal(object, float)
-    historial_corners_listo = pyqtSignal(object, float)
-    cuotas_listo = pyqtSignal(object, float)
+    # Llevan `clave` para que quien escuche pueda descartar resultados de
+    # partidos que no son el que está seleccionado en pantalla — antes el
+    # auto-escaneo en background pisaba lo que se estaba viendo cuando
+    # terminaba de procesar OTRO partido distinto al seleccionado.
+    historial_goles_listo = pyqtSignal(str, object, float)
+    historial_corners_listo = pyqtSignal(str, object, float)
+    cuotas_listo = pyqtSignal(str, object, float)
     error_ocurrido = pyqtSignal(str)
     log_mensaje = pyqtSignal(str)
 
@@ -62,6 +67,18 @@ class VisorController(QObject):
         self.threadpool.setMaxThreadCount(3)
         self.lotes: dict[str, LoteIngesta] = {}
         self._pendientes: dict[int, dict] = {}
+        # Contador incremental para identificar cada worker de forma única.
+        # NUNCA usar id(worker) para esto: los Worker son QRunnable con
+        # autoDelete=True, así que QThreadPool los destruye apenas
+        # terminan — y con el auto-escaneo lanzando muchos workers
+        # seguidos, Python reutiliza esa misma dirección de memoria para
+        # el próximo Worker que se crea. Dos workers distintos terminaban
+        # compartiendo la misma "clave_worker" y pisándose el estado en
+        # self._pendientes, lo que producía un KeyError al llegar tarde
+        # la señal de uno de ellos — y esa excepción, al escapar de un
+        # slot de Qt, crasheaba la app entera en vez de solo loguear un
+        # error.
+        self._contador_workers = itertools.count()
 
     @staticmethod
     def _resultado_tiene_datos(resultado) -> bool:
@@ -124,7 +141,7 @@ class VisorController(QObject):
             )
         elif goles_valido:
             self.log_mensaje.emit(f"✓ Goles ya en datos persistentes: {clave}")
-            self.historial_goles_listo.emit(goles_cache, 0.0)
+            self.historial_goles_listo.emit(clave, goles_cache, 0.0)
         else:
             self.log_mensaje.emit(f"⚠️ No se puede procesar goles: falta archivo en {clave}")
 
@@ -147,7 +164,7 @@ class VisorController(QObject):
             )
         elif corners_valido:
             self.log_mensaje.emit(f"✓ Corners ya en datos persistentes: {clave}")
-            self.historial_corners_listo.emit(corners_cache, 0.0)
+            self.historial_corners_listo.emit(clave, corners_cache, 0.0)
         else:
             self.log_mensaje.emit(f"⚠️ No se puede procesar corners: falta archivo en {clave}")
 
@@ -168,21 +185,30 @@ class VisorController(QObject):
             )
         elif cuotas_valido:
             self.log_mensaje.emit(f"✓ Cuotas ya en datos persistentes: {clave}")
-            self.cuotas_listo.emit(cuotas_cache, 0.0)
+            self.cuotas_listo.emit(clave, cuotas_cache, 0.0)
         else:
             self.log_mensaje.emit(f"️ No se puede procesar cuotas: falta archivo en {clave}")
 
     def _ejecutar_worker(self, fn, args, on_success, on_error, descripcion: str):
         worker = Worker(fn, *args)
-        clave_worker = id(worker)
+        clave_worker = next(self._contador_workers)
         self._pendientes[clave_worker] = {}
         
         def _guardar_resultado(resultado):
-            self._pendientes[clave_worker]["resultado"] = resultado
+            estado = self._pendientes.get(clave_worker)
+            if estado is None:
+                # Llegó una señal tardía para un worker cuya entrada ya se
+                # había completado o descartado — no hay nada seguro que
+                # hacer con esto, se ignora en vez de crashear.
+                return
+            estado["resultado"] = resultado
             self._intentar_completar(clave_worker, on_success)
         
         def _guardar_tiempo(ms):
-            self._pendientes[clave_worker]["tiempo_ms"] = ms
+            estado = self._pendientes.get(clave_worker)
+            if estado is None:
+                return
+            estado["tiempo_ms"] = ms
             self._intentar_completar(clave_worker, on_success)
         
         def _manejar_error(error_tuple):
@@ -208,7 +234,7 @@ class VisorController(QObject):
 
     def _on_goles_result(self, clave: str, resultado: ResultadoParseoImagen, tiempo_ms: float):
         guardar_partido(clave, resultado_goles=resultado)
-        self.historial_goles_listo.emit(resultado, tiempo_ms)
+        self.historial_goles_listo.emit(clave, resultado, tiempo_ms)
 
     def _on_goles_error(self, error_tuple):
         exctype, value, tb = error_tuple
@@ -217,7 +243,7 @@ class VisorController(QObject):
 
     def _on_corners_result(self, clave: str, resultado: ResultadoParseoImagen, tiempo_ms: float):
         guardar_partido(clave, resultado_corners=resultado)
-        self.historial_corners_listo.emit(resultado, tiempo_ms)
+        self.historial_corners_listo.emit(clave, resultado, tiempo_ms)
 
     def _on_corners_error(self, error_tuple):
         exctype, value, tb = error_tuple
@@ -226,7 +252,7 @@ class VisorController(QObject):
 
     def _on_cuotas_result(self, clave: str, resultado: ResultadoParseoPDF, tiempo_ms: float):
         guardar_partido(clave, resultado_cuotas=resultado)
-        self.cuotas_listo.emit(resultado, tiempo_ms)
+        self.cuotas_listo.emit(clave, resultado, tiempo_ms)
 
     def _on_cuotas_error(self, error_tuple):
         exctype, value, tb = error_tuple

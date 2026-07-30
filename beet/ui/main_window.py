@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Optional
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QFileDialog, QTabWidget, QMessageBox,
@@ -21,6 +22,11 @@ class MainWindow(QMainWindow):
         self.resize(1200, 800)
         self._ultimo_lote_por_clave = {}
         self._carpeta_actual = _carpeta_downloads()
+        # Partido actualmente mostrado en los tabs. El auto-escaneo procesa
+        # TODOS los partidos de la carpeta en background; sin este filtro,
+        # el resultado de cualquier otro partido que termine de procesarse
+        # pisaba lo que el usuario tenía abierto en pantalla.
+        self._clave_seleccionada: Optional[str] = None
         self.controller = VisorController()
         self._setup_ui()
         self._conectar_senales()
@@ -81,6 +87,7 @@ class MainWindow(QMainWindow):
         self.controller.cargar_carpeta(ruta)
 
     def _on_partido_seleccionado(self, clave: str, lote):
+        self._clave_seleccionada = clave
         self.historial_tab.limpiar()
         self.cuotas_tab.limpiar()
         self.controller.procesar_partido(clave, lote)
@@ -89,13 +96,19 @@ class MainWindow(QMainWindow):
         self._ultimo_lote_por_clave = lotes
         self.partido_list.set_lotes(lotes)
 
-    def _on_goles_listo(self, resultado, tiempo_ms: float):
+    def _on_goles_listo(self, clave: str, resultado, tiempo_ms: float):
+        if clave != self._clave_seleccionada:
+            return
         self.historial_tab.mostrar_resultado(resultado, tiempo_ms, tipo="goles")
 
-    def _on_corners_listo(self, resultado, tiempo_ms: float):
+    def _on_corners_listo(self, clave: str, resultado, tiempo_ms: float):
+        if clave != self._clave_seleccionada:
+            return
         self.historial_tab.mostrar_resultado(resultado, tiempo_ms, tipo="corners")
 
-    def _on_cuotas_listo(self, resultado, tiempo_ms: float):
+    def _on_cuotas_listo(self, clave: str, resultado, tiempo_ms: float):
+        if clave != self._clave_seleccionada:
+            return
         self.cuotas_tab.mostrar_resultado(resultado, tiempo_ms)
 
     def _on_error(self, mensaje: str):

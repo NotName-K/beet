@@ -54,7 +54,7 @@ class CuotasTab(QWidget):
             self.tabla.insertRow(fila)
 
             mercado = getattr(cuota, "mercado", "")
-            casa = getattr(cuota, "casa", "")
+            casa = getattr(cuota, "casa_origen", "")
             valor = getattr(cuota, "valor", "")
             # acepta "válida" o "valida" según cómo haya quedado definido
             # el campo en beet/core/cuota.py
