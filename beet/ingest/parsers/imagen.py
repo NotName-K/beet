@@ -22,8 +22,8 @@ from beet.core.normalizacion import normalizar_nombre
 logger = logging.getLogger(__name__)
 
 API_KEYS = [
-    "AIzaSyBbhovMtMabhcM5g_qsVFPqHvaT-hghezs",
-    "AIzaSyAtciMewnK2Btk5EJ-4DyQhtDR3qhj05oU"
+    """Aqui se debe corregir para evitar filtraciones de API keys, SE DEBE Tomar un archivo de texto con las API ubicadas en el dispositivo donde se ejecute el código"""
+    
 ]
 _clientes = [genai.Client(api_key=k) for k in API_KEYS]
 _cliente_cycle = itertools.cycle(_clientes)
