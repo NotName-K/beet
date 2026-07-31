@@ -1,0 +1,776 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-30T16:02:12.104804",
+    "clave": "Orense_vs_Aucas_Ecuador_Liga Pro"
+  },
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Liga Pro",
+    "equipo_local_nombre": "Orense",
+    "equipo_visitante_nombre": "Aucas",
+    "historial_local": {
+      "equipo": "Orense",
+      "partidos": [
+        {
+          "fecha": "2026-07-16",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-07-06",
+          "competicion": "Liga Pro",
+          "rival": "Técnico Universitario",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-23",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-08",
+          "competicion": "Liga Pro",
+          "rival": "Leones del Norte",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Liga Pro",
+          "rival": "Barcelona Guayaquil",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-18",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-11",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-19",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-09",
+          "competicion": "Liga Pro",
+          "rival": "Manta",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-20",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Aucas",
+      "partidos": [
+        {
+          "fecha": "2026-07-19",
+          "competicion": "Liga Pro",
+          "rival": "Técnico Universitario",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-07-12",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-31",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 2,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-16",
+          "competicion": "Liga Pro",
+          "rival": "Barcelona Guayaquil",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-01",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            2,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-22",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-17",
+          "competicion": "Liga Pro",
+          "rival": "Leones del Norte",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-14",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 2,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-28",
+          "competicion": "Liga Pro",
+          "rival": "Guayaquil City",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-30T16:02:12.104854",
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Liga Pro",
+    "equipo_local_nombre": "Orense",
+    "equipo_visitante_nombre": "Aucas",
+    "historial_local": {
+      "equipo": "Orense",
+      "partidos": [
+        {
+          "fecha": "2026-07-16",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            5,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-07-06",
+          "competicion": "Liga Pro",
+          "rival": "Técnico Universitario",
+          "marcador": [
+            11,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-23",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            6,
+            5
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-08",
+          "competicion": "Liga Pro",
+          "rival": "Leones del Norte",
+          "marcador": [
+            7,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Liga Pro",
+          "rival": "Barcelona Guayaquil",
+          "marcador": [
+            7,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-18",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            6,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-11",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            5,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-19",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            2,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-09",
+          "competicion": "Liga Pro",
+          "rival": "Manta",
+          "marcador": [
+            4,
+            6
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-20",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            7,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Aucas",
+      "partidos": [
+        {
+          "fecha": "2026-07-19",
+          "competicion": "Liga Pro",
+          "rival": "Técnico Universitario",
+          "marcador": [
+            6,
+            10
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-07-12",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            4,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-31",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            6,
+            4
+          ],
+          "tarjetas_rojas": 2,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-16",
+          "competicion": "Liga Pro",
+          "rival": "Barcelona Guayaquil",
+          "marcador": [
+            5,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-01",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            5,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-22",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            4,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-17",
+          "competicion": "Liga Pro",
+          "rival": "Leones del Norte",
+          "marcador": [
+            3,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            4,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-14",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            7,
+            5
+          ],
+          "tarjetas_rojas": 2,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-28",
+          "competicion": "Liga Pro",
+          "rival": "Guayaquil City",
+          "marcador": [
+            9,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-30T16:01:47.911180",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Orense",
+        "valor": 2.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 3.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Aucas",
+        "valor": 2.63,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 1.74,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.94,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 0.5 Goals",
+        "valor": 9.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 0.5 Goals",
+        "valor": 1.07,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 1.5 Goals",
+        "valor": 3.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 1.5 Goals",
+        "valor": 1.3,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 2.5 Goals",
+        "valor": 1.73,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 2.5 Goals",
+        "valor": 1.95,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Under 3.5 Goals",
+        "valor": 1.26,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Over 3.5 Goals",
+        "valor": 3.35,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Under 0.5 Goals",
+        "valor": 3.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Over 0.5 Goals",
+        "valor": 1.33,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Under 1.5 Goals",
+        "valor": 1.44,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Over 1.5 Goals",
+        "valor": 2.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Under 0.5 Goals",
+        "valor": 2.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Over 0.5 Goals",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Under 1.5 Goals",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Over 1.5 Goals",
+        "valor": 2.48,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Orense or Draw",
+        "valor": 1.41,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Aucas or Draw",
+        "valor": 1.44,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Orense or Aucas",
+        "valor": 1.36,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Over 7.5",
+        "valor": 1.3,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Under 8.5",
+        "valor": 2.16,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Under 9.5",
+        "valor": 1.74,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Under 10.5",
+        "valor": 1.47,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Under 11.5",
+        "valor": 1.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Under 12.5",
+        "valor": 1.24,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Under 7.5",
+        "valor": 3.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Over 8.5",
+        "valor": 1.58,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Over 9.5",
+        "valor": 1.94,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Over 10.5",
+        "valor": 2.45,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Over 11.5",
+        "valor": 3.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners Over 12.5",
+        "valor": 3.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Over 4.5 Corners",
+        "valor": 1.76,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Over 5.5 Corners",
+        "valor": 2.33,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Over 6.5 Corners",
+        "valor": 3.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Over 4.5 Corners",
+        "valor": 2.07,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Over 5.5 Corners",
+        "valor": 2.85,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Over 6.5 Corners",
+        "valor": 3.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Orense Under 4.5 Corners",
+        "valor": 1.83,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Aucas Under 4.5 Corners",
+        "valor": 1.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Most Corners - Orense",
+        "valor": 1.76,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Most Corners - Aucas",
+        "valor": 2.2,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals O/U",
+      "Team Goals O/U",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners",
+      "Most Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-30T16:01:51.234528"
+}

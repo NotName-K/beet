@@ -1,0 +1,677 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-30T16:00:46.149859",
+    "clave": "Athletic Club_vs_São Bernardo_Brazil_Serie B"
+  },
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Serie B",
+    "equipo_local_nombre": "Athletic Club",
+    "equipo_visitante_nombre": "São Bernardo",
+    "historial_local": {
+      "equipo": "Athletic Club",
+      "partidos": [
+        {
+          "fecha": "2026-07-07",
+          "competicion": "Serie B",
+          "rival": "Operário PR",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-06-28",
+          "competicion": "Serie B",
+          "rival": "Avaí",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-14",
+          "competicion": "Serie B",
+          "rival": "Goiás",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-30",
+          "competicion": "Serie B",
+          "rival": "Fortaleza",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie B",
+          "rival": "Juventude",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-09",
+          "competicion": "Serie B",
+          "rival": "Cuiabá",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-27",
+          "competicion": "Serie B",
+          "rival": "Náutico",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Serie B",
+          "rival": "América Mineiro",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-22",
+          "competicion": "Serie B",
+          "rival": "Ponte Preta",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-23",
+          "competicion": "Serie B",
+          "rival": "Paysandu",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "São Bernardo",
+      "partidos": [
+        {
+          "fecha": "2026-07-06",
+          "competicion": "Serie B",
+          "rival": "Vila Nova",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-06-27",
+          "competicion": "Serie B",
+          "rival": "Criciúma",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-06-07",
+          "competicion": "Serie B",
+          "rival": "CRB",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-24",
+          "competicion": "Serie B",
+          "rival": "Atlético GO",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-12",
+          "competicion": "Serie B",
+          "rival": "Londrina",
+          "marcador": [
+            3,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-30T16:00:36.188091",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Athletic Club",
+        "valor": 2.12,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 3.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - São Bernardo",
+        "valor": 3.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 1.92,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.76,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 0.5",
+        "valor": 7.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 0.5",
+        "valor": 1.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 1.5",
+        "valor": 2.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 1.5",
+        "valor": 1.38,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 2.5",
+        "valor": 1.58,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 2.5",
+        "valor": 2.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 3.5",
+        "valor": 1.19,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 3.5",
+        "valor": 4.3,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Under 0.5",
+        "valor": 3.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 0.5",
+        "valor": 1.27,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Under 1.5",
+        "valor": 1.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 1.5",
+        "valor": 2.33,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Under 0.5",
+        "valor": 2.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 0.5",
+        "valor": 1.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Under 1.5",
+        "valor": 1.22,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 1.5",
+        "valor": 3.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Athletic Club or Draw",
+        "valor": 1.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - São Bernardo or Draw",
+        "valor": 1.68,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Athletic Club or São Bernardo",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.23,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 2.63,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 2.04,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.66,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.42,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.26,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 3.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.41,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 1.67,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 2.05,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 2.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 3.35,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 3.5 Corners",
+        "valor": 1.21,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 4.5 Corners",
+        "valor": 1.43,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 5.5 Corners",
+        "valor": 1.77,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 6.5 Corners",
+        "valor": 2.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 3.5 Corners",
+        "valor": 1.65,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 4.5 Corners",
+        "valor": 2.23,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 5.5 Corners",
+        "valor": 3.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 6.5 Corners",
+        "valor": 4.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Under 5.5 Corners",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Under 3.5 Corners",
+        "valor": 2.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Athletic Club - Over 2.5 Corners",
+        "valor": 1.08,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "São Bernardo - Over 2.5 Corners",
+        "valor": 1.29,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-30T16:00:46.149918",
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Serie B",
+    "equipo_local_nombre": "Athletic Club",
+    "equipo_visitante_nombre": "São Bernardo",
+    "historial_local": {
+      "equipo": "Athletic Club",
+      "partidos": [
+        {
+          "fecha": "2026-07-07",
+          "competicion": "Serie B",
+          "rival": "Operário PR",
+          "marcador": [
+            8,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-28",
+          "competicion": "Serie B",
+          "rival": "Avaí",
+          "marcador": [
+            8,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-14",
+          "competicion": "Serie B",
+          "rival": "Goiás",
+          "marcador": [
+            5,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-30",
+          "competicion": "Serie B",
+          "rival": "Fortaleza",
+          "marcador": [
+            8,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie B",
+          "rival": "Juventude",
+          "marcador": [
+            5,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-09",
+          "competicion": "Serie B",
+          "rival": "Cuiabá",
+          "marcador": [
+            6,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-27",
+          "competicion": "Serie B",
+          "rival": "Náutico",
+          "marcador": [
+            8,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Serie B",
+          "rival": "América Mineiro",
+          "marcador": [
+            4,
+            7
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-22",
+          "competicion": "Serie B",
+          "rival": "Ponte Preta",
+          "marcador": [
+            3,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-11-23",
+          "competicion": "Serie B",
+          "rival": "Paysandu",
+          "marcador": [
+            8,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "São Bernardo",
+      "partidos": [
+        {
+          "fecha": "2026-07-06",
+          "competicion": "Serie B",
+          "rival": "Vila Nova",
+          "marcador": [
+            6,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-27",
+          "competicion": "Serie B",
+          "rival": "Criciúma",
+          "marcador": [
+            7,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-07",
+          "competicion": "Serie B",
+          "rival": "CRB",
+          "marcador": [
+            8,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-24",
+          "competicion": "Serie B",
+          "rival": "Atlético GO",
+          "marcador": [
+            8,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-12",
+          "competicion": "Serie B",
+          "rival": "Londrina",
+          "marcador": [
+            9,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-30T16:00:45.447110"
+}

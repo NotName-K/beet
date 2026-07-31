@@ -17,7 +17,7 @@ Aunque hoy es una herramienta de análisis, la meta de fondo es que llegue a ser
 ### Lo que Beet hace
 
 - **Ingesta automática con IA**: escanea una carpeta, agrupa los 3 archivos por partido (2 imágenes + 1 PDF) y extrae datos estructurados mediante **Google Gemini** (visión para imágenes, PDF nativo para cuotas).
-- **Pool de API Keys**: usa 2 claves de Gemini en paralelo para duplicar el throughput y evitar rate limits.
+- **Pool de API Keys configurable**: usa 1 o 2 claves de Gemini (a elección del usuario, pedidas por diálogo en el primer arranque) en rotación para repartir la cuota y evitar rate limits. Se guardan en `~/.beet/config.json`, fuera del repo.
 - **Datos persistentes**: guarda los resultados en `beet/data/partidos/*.json` para no gastar tokens en partidos ya procesados y alimentar el backtesting futuro.
 - **Doble extracción**: procesa tanto los goles (Match Result) como los corners (Total Match Corners) de cada partido.
 - **Modelado de dominio**: representa partidos, historiales de equipos, cuotas y mercados como objetos Python tipados.
@@ -45,6 +45,15 @@ Arquitectura v3 implementada. El visor de validación de parsers está funcional
 - **Fix de Unicode**: workaround para rutas con tildes/ñ en Windows (Ceará, Goiás, São Paulo).
 - **Escaneo automático**: al cargar una carpeta, se procesan todos los partidos en background automáticamente.
 
+### Cambios recientes (v3.1)
+
+- **API Keys ya no están hardcodeadas**: se migraron a `~/.beet/config.json`, fuera del repo. Al arrancar la app por primera vez (o si el archivo de config no existe), un diálogo (`beet/ui/widgets/api_keys_dialog.py`) pide 1 o 2 keys de Gemini y las guarda. Las keys se leen de forma perezosa (recién al pedir el primer cliente, no al importar el módulo), para que el diálogo pueda guardarlas antes de que cualquier parser las necesite.
+- **Módulo compartido `_gemini_common.py`**: se deduplicó la lógica repetida entre `imagen.py` y `pdf.py` (rotación de clientes, subida de archivos temporales, extracción de JSON, reintentos con backoff).
+- **Reintentos en el parser de PDF**: `pdf.py` no tenía la lógica de reintentos ante rate limit/cuota que sí tenía `imagen.py` — ahora ambos la comparten.
+- **Fix de crash fatal en `visor_controller.py`**: los workers se identificaban con `id(worker)`, pero al ser `QRunnable` con auto-eliminación, Python podía reutilizar esa misma dirección de memoria para el siguiente worker creado, causando colisiones y un `KeyError` que escapaba de un slot de Qt y crasheaba la app a nivel de sistema operativo. Ahora se usa un contador incremental único (`itertools.count()`).
+- **Fix de resultados cruzados en la UI**: el auto-escaneo procesa todos los partidos en background; antes, el resultado de cualquier partido que terminara de procesarse pisaba lo que el usuario tenía abierto en pantalla, sin importar cuál estuviera seleccionado. Las señales del controller ahora llevan la clave del partido, y la ventana principal descarta los resultados que no correspondan al partido seleccionado.
+- **Fix de columna "Casa" vacía en la tab de Cuotas**: leía un atributo `casa` que no existe en el modelo `Cuota` (el campo real es `casa_origen`).
+
 ## Instalación
 
 ```bash
@@ -64,7 +73,13 @@ pip install -e ".[dev]"
 pip install google-genai
 ```
 
-**Nota**: Las API Keys de Gemini están hardcodeadas temporalmente en `beet/ingest/parsers/imagen.py` y `pdf.py`. Para producción, migrar a variables de entorno.
+**API Keys de Gemini**: no van en el código. La primera vez que corras la app (`python beet-visor.py` o `python -m beet.ui`), si no existe `~/.beet/config.json` se abre un diálogo pidiendo 1 o 2 keys de Gemini (la segunda es opcional, se usa en rotación para repartir cuota). Quedan guardadas ahí, fuera del repo, y no hace falta volver a ingresarlas en corridas futuras. Si preferís configurarlas a mano, podés crear el archivo vos mismo:
+
+```json
+{
+  "gemini_api_keys": ["tu-key-1", "tu-key-2"]
+}
+```
 
 ## Ejecución
 
@@ -85,6 +100,8 @@ Beet/                          ← repo Git (raíz del clone)
  ├── beet-visor.py              ← Entry point standalone
  │   Ejecuta el visor sin necesidad de instalar el paquete.
  │   Agrega la raíz del repo al sys.path e importa beet.ui.
+ │   Si no hay API Keys guardadas (~/.beet/config.json), muestra
+ │   ApiKeysDialog antes de crear la ventana principal.
  │
  ├── beet-visor.bat             ← Script Windows
  │   Doble clic. Ejecuta pythonw (sin ventana de consola).
@@ -131,10 +148,15 @@ Beet/                          ← repo Git (raíz del clone)
      │   │   HistorialEquipo: equipo (str), partidos (lista variable).
      │   │   Métodos: tasa_hit_mercado(), historial_corto (property).
      │   │
-     │   └── normalizacion.py
-     │       Tabla NOMBRES_CANONICOS para unificar nombres de equipos
-     │       entre fuentes. Ej: "Viking FK" → "Viking", "Bodo Glimt" → "Bodø/Glimt".
-     │       Función normalizar_nombre() consulta la tabla o devuelve el nombre limpio.
+     │   ├── normalizacion.py
+     │   │   Tabla NOMBRES_CANONICOS para unificar nombres de equipos
+     │   │   entre fuentes. Ej: "Viking FK" → "Viking", "Bodo Glimt" → "Bodø/Glimt".
+     │   │   Función normalizar_nombre() consulta la tabla o devuelve el nombre limpio.
+     │   │
+     │   └── config.py
+     │       Configuración persistente del usuario (hoy: API Keys de Gemini).
+     │       Guarda/lee ~/.beet/config.json — FUERA del repo, nunca se commitea.
+     │       Funciones: cargar_api_keys(), guardar_api_keys(), hay_api_keys_configuradas().
      │
      ├── ingest/                ← 📥 PIPELINE DE INGESTA
      │   │                      Extrae datos estructurados desde capturas
@@ -158,10 +180,17 @@ Beet/                          ← repo Git (raíz del clone)
      │       ├── __init__.py
      │       │   Exporta: ResultadoParseoImagen, ResultadoParseoPDF
      │       │
+     │       ├── _gemini_common.py
+     │       │   Lógica compartida entre imagen.py y pdf.py: rotación de
+     │       │   clientes Gemini (round-robin), subida de archivos temporales,
+     │       │   extracción de JSON de la respuesta y reintentos con backoff
+     │       │   ante errores transitorios (rate limit/cuota).
+     │       │   Lee las API Keys de beet.core.config de forma PEREZOSA
+     │       │   (recién al pedir el primer cliente, no al importar el módulo).
+     │       │
      │       ├── imagen.py
      │       │   Parser de imágenes con Google Gemini Vision.
      │       │   Usa gemini-3.1-flash-lite para extraer datos de capturas.
-     │       │   Pool de 2 API Keys en paralelo (round-robin).
      │       │   Extrae: stat_type, highlight_market, filtro_liga,
      │       │   nombre de equipos, tabla de historial fila por fila.
      │       │   Detecta hit_mercado_resaltado por color de fondo
@@ -173,7 +202,6 @@ Beet/                          ← repo Git (raíz del clone)
      │       └── pdf.py
      │           Parser de PDFs de cuotas con Google Gemini PDF nativo.
      │           Usa gemini-3.1-flash-lite para leer PDFs directamente.
-     │           Pool de 2 API Keys en paralelo (round-robin).
      │           Extrae cuotas con casa_origen="bet365" (fuente Adam Choi).
      │           Workaround de Unicode: copia archivo a ruta temporal ASCII.
      │           Clase ResultadoParseoPDF: cuotas[], secciones_encontradas[], errores[].
@@ -187,6 +215,9 @@ Beet/                          ← repo Git (raíz del clone)
      │   │
      │   ├── __main__.py
      │   │   Entry point para "python -m beet.ui".
+     │   │   Si no hay API Keys guardadas (~/.beet/config.json), muestra
+     │   │   ApiKeysDialog ANTES de crear MainWindow (el auto-escaneo
+     │   │   arranca en su constructor y ya las necesita disponibles).
      │   │   Crea QApplication, instancia MainWindow, ejecuta loop.
      │   │
      │   ├── main_window.py
@@ -202,6 +233,11 @@ Beet/                          ← repo Git (raíz del clone)
      │       │
      │       ├── __init__.py
      │       │   Exporta: LogPanel, PartidoList, HistorialTab, CuotasTab
+     │       │
+     │       ├── api_keys_dialog.py
+     │       │   Diálogo inicial (ApiKeysDialog) que pide 1 o 2 API Keys
+     │       │   de Gemini si ~/.beet/config.json todavía no existe.
+     │       │   Las guarda vía beet.core.config.guardar_api_keys().
      │       │
      │       ├── log_panel.py
      │       │   Panel de texto inferior. Read-only, scrollable.
@@ -239,7 +275,12 @@ Beet/                          ← repo Git (raíz del clone)
      │       Usa QThreadPool para ejecutar parsers sin congelar la UI.
      │       Clases internas: WorkerSignals, Worker (QRunnable).
      │       Señales: lotes_cargados, historial_goles_listo, historial_corners_listo,
-     │       cuotas_listo, error_ocurrido, log_mensaje.
+     │       cuotas_listo, error_ocurrido, log_mensaje. Las 3 de resultado
+     │       llevan la clave del partido, para que la UI descarte resultados
+     │       de partidos que no son el seleccionado (auto-escaneo en background).
+     │       Cada worker se identifica con un contador incremental propio
+     │       (nunca id(worker) — un QRunnable con autoDelete puede reutilizar
+     │       esa dirección de memoria para el siguiente worker creado).
      │       Métodos: cargar_carpeta(), procesar_partido().
      │       Auto-escaneo: procesa todos los partidos al cargar carpeta.
      │       Verifica datos persistentes antes de llamar a Gemini.
@@ -320,11 +361,13 @@ flowchart TD
 - **Costo mínimo**: la capa gratuita de Gemini 3.1 Flash Lite es muy generosa.
 - **Trade-off**: requiere conexión a internet y tiene rate limits (mitigado con pool de 2 API Keys).
 
-### ¿Por qué 2 API Keys en paralelo?
+### ¿Por qué API Keys configurables en vez de hardcodeadas?
 
-- **Duplicar throughput**: cada clave tiene su propio límite de requests por minuto.
-- **Round-robin**: los workers toman claves alternadamente para balancear la carga.
-- **Thread-safe**: uso de `threading.Lock()` + `itertools.cycle` para concurrencia segura.
+- **Nunca deben quedar en git**: hubo un incidente real donde dos keys quedaron commiteadas en `imagen.py`/`pdf.py` y el repo se hizo público con ellas expuestas — se revocaron a tiempo y se limpió el historial con `git filter-repo`, pero el diseño tenía que dejar de depender de eso.
+- **Se guardan en `~/.beet/config.json`**, fuera del repo — imposible que un `git push` las vuelva a exponer.
+- **Diálogo en el primer arranque**: si el archivo de config no existe, `ApiKeysDialog` las pide antes de crear la ventana principal.
+- **Lectura perezosa**: `_gemini_common.py` recién inicializa los clientes de Gemini al pedir el primero, no al importar el módulo — así el orden de imports no importa, el diálogo siempre alcanza a guardarlas antes de que se necesiten.
+- **Rotación (round-robin)**: si hay 2 keys, cada una tiene su propio límite de requests por minuto — los workers las toman alternadamente vía `itertools.cycle` + `threading.Lock()` para concurrencia segura. Con 1 sola key también funciona, solo que sin ese margen extra de cuota.
 
 ### ¿Por qué datos persistentes en JSON?
 
@@ -363,7 +406,7 @@ flowchart TD
 | 5 | 🔲 | Motor de simulación (services/) |
 | 6 | ⏳ | Calibración empírica + backtesting |
 | 7 | 🔲 | Automatización de captura (selenium/playwright) |
-| 8 | ⏳ | Migrar API Keys a variables de entorno |
+| 8 | ✅ | API Keys fuera del código (`~/.beet/config.json` + diálogo inicial) |
 
 ## Licencia
 

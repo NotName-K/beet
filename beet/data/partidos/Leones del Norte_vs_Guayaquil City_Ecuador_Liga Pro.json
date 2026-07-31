@@ -1,0 +1,742 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-30T16:01:44.519155",
+    "clave": "Leones del Norte_vs_Guayaquil City_Ecuador_Liga Pro"
+  },
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Liga Pro",
+    "equipo_local_nombre": "Leones del Norte",
+    "equipo_visitante_nombre": "Guayaquil City",
+    "historial_local": {
+      "equipo": "Leones del Norte",
+      "partidos": [
+        {
+          "fecha": "2026-07-15",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-07-10",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-01",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            3,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-22",
+          "competicion": "Liga Pro",
+          "rival": "Manta",
+          "marcador": [
+            3,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-17",
+          "competicion": "Liga Pro",
+          "rival": "Aucas",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-17",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-28",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Guayaquil City",
+      "partidos": [
+        {
+          "fecha": "2026-07-15",
+          "competicion": "Liga Pro",
+          "rival": "Barcelona Guayaquil",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-07-07",
+          "competicion": "Liga Pro",
+          "rival": "Aucas",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-23",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-02",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-21",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-17",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            3,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-04",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            1,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-18",
+          "competicion": "Liga Pro",
+          "rival": "Manta",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-06",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-22",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-30T16:01:40.236653",
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Liga Pro",
+    "equipo_local_nombre": "Leones del Norte",
+    "equipo_visitante_nombre": "Guayaquil City",
+    "historial_local": {
+      "equipo": "Leones del Norte",
+      "partidos": [
+        {
+          "fecha": "2026-07-15",
+          "competicion": "Liga Pro",
+          "rival": "Deportivo Cuenca",
+          "marcador": [
+            5,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-07-10",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            3,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-06-01",
+          "competicion": "Liga Pro",
+          "rival": "Macará",
+          "marcador": [
+            4,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            4,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            3,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-22",
+          "competicion": "Liga Pro",
+          "rival": "Manta",
+          "marcador": [
+            6,
+            5
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-17",
+          "competicion": "Liga Pro",
+          "rival": "Aucas",
+          "marcador": [
+            5,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 2,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-17",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            2,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-28",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            3,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Guayaquil City",
+      "partidos": [
+        {
+          "fecha": "2026-07-15",
+          "competicion": "Liga Pro",
+          "rival": "Barcelona Guayaquil",
+          "marcador": [
+            5,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-07-07",
+          "competicion": "Liga Pro",
+          "rival": "Aucas",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-23",
+          "competicion": "Liga Pro",
+          "rival": "Mushuc Runa",
+          "marcador": [
+            10,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-02",
+          "competicion": "Liga Pro",
+          "rival": "LDU Quito",
+          "marcador": [
+            6,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-21",
+          "competicion": "Liga Pro",
+          "rival": "Libertad",
+          "marcador": [
+            5,
+            3
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-17",
+          "competicion": "Liga Pro",
+          "rival": "Emelec",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-04",
+          "competicion": "Liga Pro",
+          "rival": "Universidad Católica",
+          "marcador": [
+            5,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-18",
+          "competicion": "Liga Pro",
+          "rival": "Manta",
+          "marcador": [
+            3,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-06",
+          "competicion": "Liga Pro",
+          "rival": "Delfin",
+          "marcador": [
+            2,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-22",
+          "competicion": "Liga Pro",
+          "rival": "Independiente del Valle",
+          "marcador": [
+            8,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-30T16:01:41.206878",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Leones del Norte",
+        "valor": 1.85,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 3.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Guayaquil City",
+        "valor": 4.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 2.12,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.61,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 1.5",
+        "valor": 2.45,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 1.5",
+        "valor": 1.46,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 2.5",
+        "valor": 1.47,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 2.5",
+        "valor": 2.45,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 3.5",
+        "valor": 1.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 3.5",
+        "valor": 4.6,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Leones del Norte - Under 0.5",
+        "valor": 3.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Leones del Norte - Over 0.5",
+        "valor": 1.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Leones del Norte - Under 1.5",
+        "valor": 1.66,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Leones del Norte - Over 1.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Guayaquil City - Under 0.5",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Guayaquil City - Over 0.5",
+        "valor": 1.72,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Guayaquil City - Under 1.5",
+        "valor": 1.18,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Guayaquil City - Over 1.5",
+        "valor": 4.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Leones del Norte or Draw",
+        "valor": 1.16,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Guayaquil City or Draw",
+        "valor": 1.84,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 1.61,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.36,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.22,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.12,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 2.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.66,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 2.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 3.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 4.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 6.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Team Corners - Guayaquil City Over 3.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Second Half Total Goals - Over 0.5",
+        "valor": 1.33,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Second Half Total Goals - Over 1.5",
+        "valor": 2.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "First Half Team Goals - Leones del Norte Over 0.5",
+        "valor": 1.83,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "First Half Team Goals - Guayaquil City Over 0.5",
+        "valor": 3.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Second Half Team Goals - Leones del Norte Over 0.5",
+        "valor": 1.61,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Second Half Team Goals - Guayaquil City Over 0.5",
+        "valor": 2.5,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners",
+      "Second Half Total Goals",
+      "First Half Team Goals",
+      "Second Half Team Goals"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-30T16:01:44.519193"
+}

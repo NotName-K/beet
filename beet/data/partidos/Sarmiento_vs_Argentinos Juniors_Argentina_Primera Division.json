@@ -1,0 +1,793 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-30T16:02:01.176927",
+    "clave": "Sarmiento_vs_Argentinos Juniors_Argentina_Primera Division"
+  },
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Superliga",
+    "equipo_local_nombre": "Sarmiento",
+    "equipo_visitante_nombre": "Argentinos Juniors",
+    "historial_local": {
+      "equipo": "Sarmiento",
+      "partidos": [
+        {
+          "fecha": "2026-04-25",
+          "competicion": "Superliga",
+          "rival": "Tigre",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-13",
+          "competicion": "Superliga",
+          "rival": "Gimnasia La Plata",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-22",
+          "competicion": "Superliga",
+          "rival": "Aldosivi",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-10",
+          "competicion": "Superliga",
+          "rival": "Racing Club",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-03",
+          "competicion": "Superliga",
+          "rival": "Estudiantes de Río Cuarto",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-26",
+          "competicion": "Superliga",
+          "rival": "Unión Santa Fe",
+          "marcador": [
+            1,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-08",
+          "competicion": "Superliga",
+          "rival": "Atlético Tucumán",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-01-29",
+          "competicion": "Superliga",
+          "rival": "Banfield",
+          "marcador": [
+            1,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-09",
+          "competicion": "Superliga",
+          "rival": "Instituto",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-10-24",
+          "competicion": "Superliga",
+          "rival": "Rosario Central",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Argentinos Juniors",
+      "partidos": [
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Superliga",
+          "rival": "Gimnasia La Plata",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-27",
+          "competicion": "Superliga",
+          "rival": "Huracán",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-11",
+          "competicion": "Superliga",
+          "rival": "Independiente Rivadavia",
+          "marcador": [
+            1,
+            3
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-31",
+          "competicion": "Superliga",
+          "rival": "Aldosivi",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-15",
+          "competicion": "Superliga",
+          "rival": "Tigre",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-07",
+          "competicion": "Superliga",
+          "rival": "Racing Club",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-01-29",
+          "competicion": "Superliga",
+          "rival": "Estudiantes de Río Cuarto",
+          "marcador": [
+            0,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-11-30",
+          "competicion": "Superliga",
+          "rival": "Boca Juniors",
+          "marcador": [
+            0,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-11-22",
+          "competicion": "Superliga",
+          "rival": "Vélez Sarsfield",
+          "marcador": [
+            2,
+            0
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-16",
+          "competicion": "Superliga",
+          "rival": "Estudiantes",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-30T16:01:54.440409",
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Superliga",
+    "equipo_local_nombre": "Sarmiento",
+    "equipo_visitante_nombre": "Argentinos Juniors",
+    "historial_local": {
+      "equipo": "Sarmiento",
+      "partidos": [
+        {
+          "fecha": "2026-04-25",
+          "competicion": "Superliga",
+          "rival": "Tigre",
+          "marcador": [
+            3,
+            6
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-13",
+          "competicion": "Superliga",
+          "rival": "Gimnasia La Plata",
+          "marcador": [
+            3,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-22",
+          "competicion": "Superliga",
+          "rival": "Aldosivi",
+          "marcador": [
+            5,
+            7
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-10",
+          "competicion": "Superliga",
+          "rival": "Racing Club",
+          "marcador": [
+            3,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-03",
+          "competicion": "Superliga",
+          "rival": "Estudiantes de Río Cuarto",
+          "marcador": [
+            6,
+            8
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-26",
+          "competicion": "Superliga",
+          "rival": "Unión Santa Fe",
+          "marcador": [
+            7,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-08",
+          "competicion": "Superliga",
+          "rival": "Atlético Tucumán",
+          "marcador": [
+            3,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-01-29",
+          "competicion": "Superliga",
+          "rival": "Banfield",
+          "marcador": [
+            9,
+            2
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-09",
+          "competicion": "Superliga",
+          "rival": "Instituto",
+          "marcador": [
+            3,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-10-24",
+          "competicion": "Superliga",
+          "rival": "Rosario Central",
+          "marcador": [
+            3,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Argentinos Juniors",
+      "partidos": [
+        {
+          "fecha": "2026-05-03",
+          "competicion": "Superliga",
+          "rival": "Gimnasia La Plata",
+          "marcador": [
+            3,
+            11
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-27",
+          "competicion": "Superliga",
+          "rival": "Huracán",
+          "marcador": [
+            4,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-11",
+          "competicion": "Superliga",
+          "rival": "Independiente Rivadavia",
+          "marcador": [
+            5,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-31",
+          "competicion": "Superliga",
+          "rival": "Aldosivi",
+          "marcador": [
+            2,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-15",
+          "competicion": "Superliga",
+          "rival": "Tigre",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-07",
+          "competicion": "Superliga",
+          "rival": "Racing Club",
+          "marcador": [
+            4,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-01-29",
+          "competicion": "Superliga",
+          "rival": "Estudiantes de Río Cuarto",
+          "marcador": [
+            1,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-11-30",
+          "competicion": "Superliga",
+          "rival": "Boca Juniors",
+          "marcador": [
+            3,
+            8
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-22",
+          "competicion": "Superliga",
+          "rival": "Vélez Sarsfield",
+          "marcador": [
+            1,
+            5
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-11-16",
+          "competicion": "Superliga",
+          "rival": "Estudiantes",
+          "marcador": [
+            5,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-30T16:01:57.709561",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Sarmiento",
+        "valor": 4.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 3.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Argentinos Juniors",
+        "valor": 2.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 2.3,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 1.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 0.5",
+        "valor": 5.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 0.5",
+        "valor": 1.14,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 1.5",
+        "valor": 2.35,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 1.5",
+        "valor": 1.56,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 2.5",
+        "valor": 1.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 2.5",
+        "valor": 2.85,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 3.5",
+        "valor": 1.12,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 3.5",
+        "valor": 5.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Under 0.5",
+        "valor": 1.83,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Over 0.5",
+        "valor": 1.73,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Under 1.5",
+        "valor": 1.14,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Over 1.5",
+        "valor": 4.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Under 0.5",
+        "valor": 3.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Over 0.5",
+        "valor": 1.3,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Under 1.5",
+        "valor": 1.44,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Over 1.5",
+        "valor": 2.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Sarmiento or Draw",
+        "valor": 1.79,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Argentinos Juniors or Draw",
+        "valor": 1.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Sarmiento or Argentinos Juniors",
+        "valor": 1.36,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.48,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 1.87,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 1.54,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.32,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.19,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 2.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 2.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 3.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 4.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 5.4,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Corners Over 3.5",
+        "valor": 1.91,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Corners Over 4.5",
+        "valor": 2.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Corners Over 5.5",
+        "valor": 3.95,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Corners Over 6.5",
+        "valor": 5.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Over 3.5",
+        "valor": 1.37,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Over 4.5",
+        "valor": 1.71,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Over 5.5",
+        "valor": 2.25,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Over 6.5",
+        "valor": 3.05,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Corners Under 3.5",
+        "valor": 1.61,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Under 4.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Under 5.5",
+        "valor": 1.67,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Sarmiento - Corners Over 2.5",
+        "valor": 1.43,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Argentinos Juniors - Corners Over 2.5",
+        "valor": 1.15,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-30T16:02:01.176969"
+}

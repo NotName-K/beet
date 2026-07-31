@@ -1,0 +1,793 @@
+{
+  "metadata": {
+    "ultima_actualizacion": "2026-07-30T16:01:01.217065",
+    "clave": "Botafogo FR_vs_Vitória_Brazil_Serie A"
+  },
+  "goles": {
+    "stat_type": "Match Result",
+    "highlight_market": "Win",
+    "filtro_liga": "Serie A",
+    "equipo_local_nombre": "Botafogo",
+    "equipo_visitante_nombre": "Vitória",
+    "historial_local": {
+      "equipo": "Botafogo",
+      "partidos": [
+        {
+          "fecha": "2026-07-16",
+          "competicion": "Serie A",
+          "rival": "Santos",
+          "marcador": [
+            2,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Corinthians",
+          "marcador": [
+            3,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-02",
+          "competicion": "Serie A",
+          "rival": "Remo",
+          "marcador": [
+            1,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-25",
+          "competicion": "Serie A",
+          "rival": "Internacional",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-12",
+          "competicion": "Serie A",
+          "rival": "Coritiba",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-01",
+          "competicion": "Serie A",
+          "rival": "Mirassol",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-14",
+          "competicion": "Serie A",
+          "rival": "Flamengo",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-01-29",
+          "competicion": "Serie A",
+          "rival": "Cruzeiro",
+          "marcador": [
+            4,
+            0
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-12-07",
+          "competicion": "Serie A",
+          "rival": "Fortaleza",
+          "marcador": [
+            4,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-11-22",
+          "competicion": "Serie A",
+          "rival": "Grêmio",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Vitória",
+      "partidos": [
+        {
+          "fecha": "2026-05-30",
+          "competicion": "Serie A",
+          "rival": "Santos",
+          "marcador": [
+            1,
+            3
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-09",
+          "competicion": "Serie A",
+          "rival": "Fluminense",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Serie A",
+          "rival": "Athletico PR",
+          "marcador": [
+            1,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Serie A",
+          "rival": "Chapecoense",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-04-01",
+          "competicion": "Serie A",
+          "rival": "Cruzeiro",
+          "marcador": [
+            0,
+            3
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-19",
+          "competicion": "Serie A",
+          "rival": "Grêmio",
+          "marcador": [
+            0,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-03-11",
+          "competicion": "Serie A",
+          "rival": "Bahia",
+          "marcador": [
+            1,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-02-04",
+          "competicion": "Serie A",
+          "rival": "Palmeiras",
+          "marcador": [
+            1,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-12-03",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            0,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "goles_timestamp": "2026-07-30T16:01:00.106841",
+  "corners": {
+    "stat_type": "Total Match Corners",
+    "highlight_market": "Over 6.5 Total Corners",
+    "filtro_liga": "Serie A",
+    "equipo_local_nombre": "Botafogo",
+    "equipo_visitante_nombre": "Vitória",
+    "historial_local": {
+      "equipo": "Botafogo",
+      "partidos": [
+        {
+          "fecha": "2026-07-16",
+          "competicion": "Serie A",
+          "rival": "Santos",
+          "marcador": [
+            5,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Corinthians",
+          "marcador": [
+            3,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-02",
+          "competicion": "Serie A",
+          "rival": "Remo",
+          "marcador": [
+            9,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-25",
+          "competicion": "Serie A",
+          "rival": "Internacional",
+          "marcador": [
+            3,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-12",
+          "competicion": "Serie A",
+          "rival": "Coritiba",
+          "marcador": [
+            7,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-01",
+          "competicion": "Serie A",
+          "rival": "Mirassol",
+          "marcador": [
+            2,
+            8
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-14",
+          "competicion": "Serie A",
+          "rival": "Flamengo",
+          "marcador": [
+            2,
+            4
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-01-29",
+          "competicion": "Serie A",
+          "rival": "Cruzeiro",
+          "marcador": [
+            3,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-12-07",
+          "competicion": "Serie A",
+          "rival": "Fortaleza",
+          "marcador": [
+            2,
+            2
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2025-11-22",
+          "competicion": "Serie A",
+          "rival": "Grêmio",
+          "marcador": [
+            7,
+            1
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        }
+      ]
+    },
+    "historial_visitante": {
+      "equipo": "Vitória",
+      "partidos": [
+        {
+          "fecha": "2026-05-30",
+          "competicion": "Serie A",
+          "rival": "Santos",
+          "marcador": [
+            5,
+            1
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": false
+        },
+        {
+          "fecha": "2026-05-17",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            6,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-05-09",
+          "competicion": "Serie A",
+          "rival": "Fluminense",
+          "marcador": [
+            3,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-26",
+          "competicion": "Serie A",
+          "rival": "Athletico PR",
+          "marcador": [
+            4,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-05",
+          "competicion": "Serie A",
+          "rival": "Chapecoense",
+          "marcador": [
+            1,
+            9
+          ],
+          "tarjetas_rojas": 1,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-04-01",
+          "competicion": "Serie A",
+          "rival": "Cruzeiro",
+          "marcador": [
+            6,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-19",
+          "competicion": "Serie A",
+          "rival": "Grêmio",
+          "marcador": [
+            5,
+            4
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-03-11",
+          "competicion": "Serie A",
+          "rival": "Bahia",
+          "marcador": [
+            3,
+            7
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2026-02-04",
+          "competicion": "Serie A",
+          "rival": "Palmeiras",
+          "marcador": [
+            4,
+            6
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": true
+        },
+        {
+          "fecha": "2025-12-03",
+          "competicion": "Serie A",
+          "rival": "Bragantino",
+          "marcador": [
+            0,
+            5
+          ],
+          "tarjetas_rojas": 0,
+          "hit_mercado_resaltado": false
+        }
+      ]
+    },
+    "errores": []
+  },
+  "corners_timestamp": "2026-07-30T16:01:00.895307",
+  "cuotas": {
+    "cuotas": [
+      {
+        "mercado": "Result - Botafogo",
+        "valor": 1.73,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Draw",
+        "valor": 3.65,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Result - Vitória",
+        "valor": 4.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - Yes",
+        "valor": 1.68,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "BTTS - No",
+        "valor": 2.06,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 0.5",
+        "valor": 11.0,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 0.5",
+        "valor": 1.05,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 1.5",
+        "valor": 4.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 1.5",
+        "valor": 1.22,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 2.5",
+        "valor": 2.02,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 2.5",
+        "valor": 1.75,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Under 3.5",
+        "valor": 1.38,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Match Goals - Over 3.5",
+        "valor": 2.9,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Goals - Under 0.5",
+        "valor": 5.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Goals - Over 0.5",
+        "valor": 1.13,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Goals - Under 1.5",
+        "valor": 1.9,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Goals - Over 1.5",
+        "valor": 1.73,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Goals - Under 0.5",
+        "valor": 2.5,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Goals - Over 0.5",
+        "valor": 1.45,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Goals - Under 1.5",
+        "valor": 1.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Goals - Over 1.5",
+        "valor": 3.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Botafogo or Draw",
+        "valor": 1.18,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Vitória or Draw",
+        "valor": 2.04,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Double Chance - Botafogo or Vitória",
+        "valor": 1.29,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 7.5",
+        "valor": 1.32,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 8.5",
+        "valor": 2.28,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 9.5",
+        "valor": 1.79,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 10.5",
+        "valor": 1.49,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 11.5",
+        "valor": 1.3,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 12.5",
+        "valor": 1.17,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Under 7.5",
+        "valor": 3.05,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 8.5",
+        "valor": 1.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 9.5",
+        "valor": 1.89,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 10.5",
+        "valor": 2.43,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 11.5",
+        "valor": 3.15,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Total Corners - Over 12.5",
+        "valor": 4.2,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Over 3.5",
+        "valor": 1.27,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Over 4.5",
+        "valor": 1.55,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Over 5.5",
+        "valor": 1.98,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Over 6.5",
+        "valor": 2.65,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Corners - Over 3.5",
+        "valor": 1.7,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Corners - Over 4.5",
+        "valor": 2.35,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Corners - Over 5.5",
+        "valor": 3.45,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Corners - Over 6.5",
+        "valor": 5.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Under 4.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Under 5.5",
+        "valor": 1.8,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Corners - Under 3.5",
+        "valor": 2.1,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Botafogo Corners - Over 2.5",
+        "valor": 1.09,
+        "casa_origen": "bet365",
+        "valida": true
+      },
+      {
+        "mercado": "Vitória Corners - Over 2.5",
+        "valor": 1.3,
+        "casa_origen": "bet365",
+        "valida": true
+      }
+    ],
+    "secciones_encontradas": [
+      "Result",
+      "BTTS",
+      "Match Goals Overs/Unders",
+      "Team Goals Overs/Unders",
+      "Double Chance",
+      "Total Corners",
+      "Team Corners"
+    ],
+    "errores": []
+  },
+  "cuotas_timestamp": "2026-07-30T16:01:01.217101"
+}
