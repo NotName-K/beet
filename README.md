@@ -31,7 +31,7 @@ Aunque hoy es una herramienta de análisis, la meta de fondo es que llegue a ser
 - No es un tipster — comunica probabilidad y valor esperado, no certezas.
 - No cubre todos los deportes — foco actual: fútbol.
 
-## Estado actual
+## Estado actual 30/07/26
 
 Arquitectura v3 implementada. El visor de validación de parsers está funcional con Gemini.
 
