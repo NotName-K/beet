@@ -34,6 +34,9 @@ Aunque hoy es una herramienta de análisis, la meta de fondo es que llegue a ser
 ## Estado actual 30/07/26
 
 Arquitectura v3 implementada. El visor de validación de parsers está funcional con Gemini.
+**Paralelamente, el pipeline de ingesta 100% HTTP desde Adam Choi está validado en scripts standalone** (ver sección "Investigación paralela" más abajo) — genera JSON completos por partido con 5 endpoints, incluyendo tarjetas rojas, pero aún no está integrado en el paquete `beet/`.
+
+### Cambios recientes (v3.0)
 
 ### Cambios recientes (v3.0)
 
@@ -395,17 +398,95 @@ flowchart TD
 - Solución: copiar archivo a ruta temporal ASCII antes de subirlo a Gemini.
 - Limpieza automática: el archivo temporal se borra inmediatamente después.
 
+## Investigación paralela: pipeline de ingesta 100% HTTP desde Adam Choi
+
+> ⚠️ **Estado: validado en scripts standalone, NO integrado aún en `beet/`**.  
+> Los scripts corren por fuera del paquete principal y sus resultados (JSON crudos) están listos para ser mapeados al modelo `Comparativa` cuando se defina su forma final (Pydantic vs dataclasses).
+
+Paralelamente al visor de validación con Gemini, se investigó y validó un **pipeline completamente automatizado vía HTTP** que consume los endpoints reales de Adam Choi (`adamchoi.co.uk` + backend `api.choistats.com`), eliminando la necesidad de capturas de pantalla, PDFs e interpretación por visión de IA para la ingesta de datos.
+
+### Scripts standalone (vigentes)
+
+> Estos scripts viven **por fuera del paquete `beet/`** (en la raíz del repo o en una carpeta de investigación). Son el resultado de las sesiones de handoff v1/v2/v3.
+
+| Script | Función | Estado |
+|---|---|---|
+| `obtener_v.py` | Obtiene automáticamente el cache-buster `v` fresco abriendo la página de fixtures con Playwright y capturando la request real del sitio. | ✅ Validado: extrae `v` sin intervención manual |
+| `build_comparativas.py` | Descarga listado de fixtures + stats agregadas por equipo (join correcto por liga doméstica). Filtra copas y ligas Premium. Usa `obtener_v.py` internamente si no se pasa `--v`. | ✅ Validado: 173 filas limpias de 413 fixtures |
+| `build_fixture_details_final.py` | Descarga detalle completo por partido (5 endpoints) y guarda un JSON por `external_id`. Maneja compresión, TLS fingerprinting (`curl_cffi`) y headers específicos por endpoint. | ✅ Validado en lote (5+ fixtures, todos los endpoints completos) |
+| `run_pipeline.py` | **Orquestador único**: ejecuta `build_comparativas.py` + `build_fixture_details_final.py` en secuencia con un solo comando. Equivalente a correr los 3 pasos anteriores manualmente. | ✅ Validado: pipeline completo end-to-end |
+
+**Uso típico (un solo comando):**
+```bash
+pip install requests curl_cffi playwright
+python run_pipeline.py --stats BTTS --limit-detalles 5
+```
+
+Esto genera:
+- `comparativas_staging.json` — listado filtrado de fixtures con stats agregadas
+- `detalles_fixtures/fixture_<external_id>.json` — un JSON por partido con las 5 fuentes
+
+### Cinco endpoints confirmados y funcionando
+
+### Cinco endpoints confirmados y funcionando
+
+1. **`api.choistats.com/api/widget/match/{externalid}/odds`** — Todos los mercados con cuota decimal, fraccional, `bookmaker` por outcome (≃ `casa_origen`), URL directa a la casa. Reemplaza la tabla del PDF.
+2. **`api.choistats.com/api/widget/chances/fixture/{externalid}`** — Mercados destacados con % de acierto histórico y rachas. Candidato natural para `estrella` / `hit_mercado_resaltado`.
+3. **`api.choistats.com/api/widget/match/{externalid}/team-records`** — Récords de temporada/standings (puede venir vacío al inicio de temporada).
+4. **`www.adamchoi.co.uk/.../getComparisonStatsAsJson.php`** — Hit-rate por mercado (overall, home, away), recent matches, head-to-head, categorías (BTTS, Corners, Cards, Goals, etc.).
+5. **`api.choistats.com/api/widget/match/{externalid}/recent-results`** — Historial partido a partido con goles, corners, tarjetas amarillas, **tarjetas rojas directas (`homeReds`/`awayReds`) y rojas por doble amarilla (`homeYellowReds`/`awayYellowReds`)**, faltas, tiros, offside, árbitro, etc. Resuelve el campo `tarjetas_rojas` que antes solo se obtenía del PDF.
+
+### Descubrimientos técnicos clave
+
+- **CORS/Origin**: los endpoints de `api.choistats.com` devuelven 401 si falta el header `Origin: https://www.adamchoi.co.uk`. El `token` de la URL es público/fijo; el control está en el WAF de Cloudflare, no en autenticación de sesión.
+- **Compresión**: `Accept-Encoding` debe ser solo `gzip, deflate`. Si se incluye `br` o `zstd` y no están instaladas las librerías de descompresión, el body llega como bytes binarios ilegibles aunque el status sea 200.
+- **TLS fingerprinting**: el endpoint `getComparisonStatsAsJson.php` bloqueaba con 403 aunque los headers fueran idénticos a los del navegador. La causa real era el fingerprint TLS de `requests` vs un navegador real. Se resolvió usando `curl_cffi` con `impersonate="firefox135"`.
+- **Redes con inspección SSL corporativa (Fortinet, etc.)**: pueden generar errores de certificado y bloqueos que se confunden con rechazos del sitio. Si aparecen 403/errores de certificado sin explicación clara, verificar primero la red.
+- **Cache-buster**: el parámetro `v=` en `getFixturesBySingleStatAsJson.php` se valida en el servidor; si vence, se recaptura desde el navegador (parece incremental, subió de `2026630` a `2026631`).
+- **Join de stats**: la clave correcta para cruzar `teamStats` con un fixture es `home_league` / `away_league` (liga doméstica del equipo), **no** `league` (que puede ser una copa internacional). Usar `league` rompe el lookup silenciosamente en partidos de copa.
+- **Ligas Premium**: el 98% de las ligas Premium no traen `teamStats` ni odds; el pipeline las descarta por defecto. El 5% residual de datos faltantes en ligas gratis es por ascensos/descensos de temporada (mismatch de código de liga).
+
+### Flujo del pipeline HTTP (standalone)
+
+```
+build_comparativas.py ──► comparativas_staging.json (listado filtrado)
+         │
+         ▼
+build_fixture_details_final.py ──► detalles_fixtures/fixture_<id>.json
+  ├─ odds (mercados + casas)
+  ├─ chances (mercados destacados)
+  ├─ team-records (standings)
+  ├─ comparison-stats (hit-rates)
+  └─ recent-results (histórico partido a partido + tarjetas rojas)
+```
+
+### Salida actual
+
+- **JSON de staging** (`comparativas_staging.json`): listado de fixtures filtrados con stats agregadas.
+- **JSON de detalle por partido** (`detalles_fixtures/fixture_<external_id>.json`): objeto con 5 claves (`odds`, `chances`, `team_records`, `recent_results`, `comparison_stats`) listo para ser transformado al modelo de dominio de Beet.
+- **Datos ya extraídos en disco**: todos los partidos solicitados fueron procesados exitosamente mediante `run_pipeline.py`; los JSON crudos están disponibles para análisis y para alimentar el futuro motor de simulación. **Aún no se ha implementado el consumo de estos JSON dentro del paquete `beet/` ni se han mapeado al modelo `Comparativa`.**
+
+### Por qué aún no está en `beet/`
+
+1. **Modelo `Comparativa` pendiente**: aún no se decidió si usa Pydantic o dataclasses (arrastrado desde la fase de diseño inicial). Sin eso no se puede escribir el mapeo formal.
+2. **Arquitectura**: estos scripts son "código de investigación" que corre por fuera del paquete. La integración implicará mover la lógica a `beet/ingest/` o crear un nuevo módulo (ej. `beet/ingest/adamchoi_http/`) que reemplace o complemente el parser de PDFs.
+3. **Decisión de merge**: aún no se define si el pipeline HTTP reemplazará por completo al pipeline de PDFs+Gemini, o si coexistirán (HTTP como fuente principal, PDF como fallback de validación).
+
+---
+
 ## Roadmap
 
 | Fase | Estado | Descripción |
 | --- | --- | --- |
 | 1 | ✅ | Core de modelos (Partido, Cuota, Historial) |
 | 2 | ✅ | Ingesta con Gemini Vision + PDF nativo |
+| 2b | ✅ | **Investigación: ingesta 100% HTTP desde Adam Choi (5 endpoints, scripts standalone validados)** |
 | 3 | ✅ | Visor de validación de parsers (PyQt6) |
 | 4 | ✅ | Datos persistentes en JSON |
 | 5 | 🔲 | Motor de simulación (services/) |
 | 6 | ⏳ | Calibración empírica + backtesting |
 | 7 | 🔲 | Automatización de captura (selenium/playwright) |
+| 7b | ⏳ | Integrar pipeline HTTP al paquete `beet/` (reemplazar o complementar PDFs) |
 | 8 | ✅ | API Keys fuera del código (`~/.beet/config.json` + diálogo inicial) |
 
 ## Licencia
