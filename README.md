@@ -38,8 +38,6 @@ Arquitectura v3 implementada. El visor de validación de parsers está funcional
 
 ### Cambios recientes (v3.0)
 
-### Cambios recientes (v3.0)
-
 - **Migración de OCR local a Google Gemini**: se eliminó Tesseract, OpenCV y pdfplumber. Ahora se usa `gemini-3.1-flash-lite` para visión y PDFs.
 - **Pool de 2 API Keys**: procesamiento en paralelo con round-robin para evitar rate limits.
 - **Doble imagen procesada**: se extraen tanto los goles (Match Result) como los corners (Total Match Corners) de cada partido.
@@ -407,11 +405,11 @@ Paralelamente al visor de validación con Gemini, se investigó y validó un **p
 
 ### Scripts standalone (vigentes)
 
-> Estos scripts viven **por fuera del paquete `beet/`** (en la raíz del repo o en una carpeta de investigación). Son el resultado de las sesiones de handoff v1/v2/v3.
+> Estos scripts viven **por fuera del paquete `beet/`** (en la raíz del repo o en una carpeta de investigación). Son el resultado de las sesiones de handoff v1–v4.
 
 | Script | Función | Estado |
 |---|---|---|
-| `obtener_v.py` | Obtiene automáticamente el cache-buster `v` fresco abriendo la página de fixtures con Playwright y capturando la request real del sitio. | ✅ Validado: extrae `v` sin intervención manual |
+| `obtener_v.py` | Obtiene automáticamente el cache-buster `v` fresco abriendo la página de fixtures con Playwright headless y capturando la request real del sitio. | ✅ Validado: extrae `v` sin intervención manual |
 | `build_comparativas.py` | Descarga listado de fixtures + stats agregadas por equipo (join correcto por liga doméstica). Filtra copas y ligas Premium. Usa `obtener_v.py` internamente si no se pasa `--v`. | ✅ Validado: 173 filas limpias de 413 fixtures |
 | `build_fixture_details_final.py` | Descarga detalle completo por partido (5 endpoints) y guarda un JSON por `external_id`. Maneja compresión, TLS fingerprinting (`curl_cffi`) y headers específicos por endpoint. | ✅ Validado en lote (5+ fixtures, todos los endpoints completos) |
 | `run_pipeline.py` | **Orquestador único**: ejecuta `build_comparativas.py` + `build_fixture_details_final.py` en secuencia con un solo comando. Equivalente a correr los 3 pasos anteriores manualmente. | ✅ Validado: pipeline completo end-to-end |
@@ -428,13 +426,129 @@ Esto genera:
 
 ### Cinco endpoints confirmados y funcionando
 
-### Cinco endpoints confirmados y funcionando
+Cada fixture procesado genera un JSON con estas 6 claves top-level:
+`external_id, odds, chances, team_records, recent_results, comparison_stats`.
 
-1. **`api.choistats.com/api/widget/match/{externalid}/odds`** — Todos los mercados con cuota decimal, fraccional, `bookmaker` por outcome (≃ `casa_origen`), URL directa a la casa. Reemplaza la tabla del PDF.
-2. **`api.choistats.com/api/widget/chances/fixture/{externalid}`** — Mercados destacados con % de acierto histórico y rachas. Candidato natural para `estrella` / `hit_mercado_resaltado`.
-3. **`api.choistats.com/api/widget/match/{externalid}/team-records`** — Récords de temporada/standings (puede venir vacío al inicio de temporada).
-4. **`www.adamchoi.co.uk/.../getComparisonStatsAsJson.php`** — Hit-rate por mercado (overall, home, away), recent matches, head-to-head, categorías (BTTS, Corners, Cards, Goals, etc.).
-5. **`api.choistats.com/api/widget/match/{externalid}/recent-results`** — Historial partido a partido con goles, corners, tarjetas amarillas, **tarjetas rojas directas (`homeReds`/`awayReds`) y rojas por doble amarilla (`homeYellowReds`/`awayYellowReds`)**, faltas, tiros, offside, árbitro, etc. Resuelve el campo `tarjetas_rojas` que antes solo se obtenía del PDF.
+#### 1. `odds` — lista de mercados (23–44 por fixture)
+
+```json
+[
+  {
+    "market": { "name": "Result", "displayRule": "THREE_WAY" },
+    "outcomes": {
+      "Celtic": { "outcome": "RESULT_HOME_WIN", "bookmaker": "UNIBET",
+                  "decimalOdds": 1.19, "fractionalOdds": "2/11",
+                  "bookmakerBetUrl": "...", "teamId": 53, ... }
+    }
+  }
+]
+```
+
+Cada outcome trae su propio campo `bookmaker` (ej. "BET365", "UNIBET") —
+esto es exactamente el `casa_origen` que se necesitaba. Cobertura real
+observada: Result, BTTS, Match/Team Goals O/U, Double Chance, Total/Team
+Corners, 1st/2nd Half Goals y Corners, Result & BTTS combinados, BTTS &
+Overs, Win To Nil, Clean Sheet, HT/FT, Cards, Booking Points, Handicap
+Result, **y mercados de jugador** (goleador, tarjeta, tiros, tiros a
+puerta, asistencia). El número de mercados varía por fixture — no asumir
+que siempre están todos.
+
+#### 2. `chances` — probabilidades pre-calculadas por choistats (candidato a `estrella`)
+
+```json
+{
+  "statType": "1+ First Half Goals",
+  "chance": 91,
+  "fixtureOdds": { "outcomeName": "Total 1H Goals - Over 0.5",
+                    "bookmaker": "BET365", "decimalOdds": 1.2, ... },
+  "homeStats": [ { "stat": "<strong>1+ goal...</strong> in 5/5 league matches",
+                    "isStreak": false } ],
+  "awayStats": [ ... ]
+}
+```
+
+Cada entrada trae la probabilidad ya calculada por el proveedor (`chance`)
+**ligada a la cuota real de esa apuesta específica**
+(`fixtureOdds.decimalOdds`). Candidato natural para
+`hit_mercado_resaltado`/`estrella` — permite comparar probabilidad justa vs
+cuota implícita sin calibrar nada propio. ⚠️ En algunos fixtures `chances`
+viene vacío o con muy pocas entradas (0–7 vistos) — no se investigó todavía
+si es esperado (partido sin suficiente histórico) o señal de un problema.
+
+#### 3. `team_records` — posición y récord en tabla, separado Home/Away/Overall
+
+```json
+{
+  "homeTeamHomeRecord": { "type": "Home", "position": "3rd", "played": 0,
+                            "won": 0, "draw": 0, "lost": 0, "goalsFor": 0,
+                            "goalsAg": 0, "points": 0, "pointsPerGame": 0.0,
+                            "form": [] },
+  "homeTeamOverallRecord": {...}, "awayTeamAwayRecord": {...},
+  "awayTeamOverallRecord": {...},
+  "homeTeamResultsWithStandings": [...], "awayTeamResultsWithStandings": [...],
+  "homeTeamId": ..., "awayTeamId": ..., "fixtureWithoutStats": ...
+}
+```
+
+Si `played: 0` y todo en cero, no es un bug — es literalmente la primera
+fecha de esa liga en la temporada. El pipeline debe distinguir "sin datos
+por inicio de temporada" de "sin datos por error".
+
+#### 4. `recent_results` — historial partido a partido, Home/Away separados + H2H
+
+```json
+{
+  "fixture": {...},
+  "recentHomeResults": [ {...42-50 partidos...} ],
+  "recentHomeAllResults": [...],
+  "recentAwayResults": [...],
+  "recentAwayAllResults": [...],
+  "headToHead": [ {...historial directo, visto desde 2021...} ],
+  "quickStats": [ { "groupName": "Result", "quickStats": [ {...rachas con
+                     % y cuota asociada...} ] } ],
+  "homeTeamId": ..., "awayTeamId": ...
+}
+```
+
+Cada partido trae: `homeGoals`, `awayGoals`, `homeGoalsHt`, `awayGoalsHt`,
+`homeCorners`, `awayCorners`, `homeCards`, `awayCards`, `homeBookingPoints`,
+`awayBookingPoints`, `timestamp`, `date`, `where` (H/A), `vs` (equipo de
+referencia). Este endpoint resolvió el pendiente de `tarjetas_rojas`:
+separa **roja directa** (`homeReds`/`awayReds`) de **roja por doble
+amarilla** (`homeYellowReds`/`awayYellowReds`). También trae `homeFouls`,
+`homeTotalShots`, `homeOffsides`, `referee`, entre otros campos no
+explorados en profundidad todavía.
+
+`quickStats` trae rachas tipo "Unbeaten en 9/10 partidos" con desglose
+Home/Away/Overall, `last10*Perc`, y también ligadas a `fixtureOdds` —
+mismo patrón que `chances`, otro candidato a insumo de `estrella`.
+
+#### 5. `comparison_stats` — el más denso, indicadores + tabla + rachas
+
+```json
+{
+  "stats": [
+    { "stattype": "Over 25 Booking Points", "statid": "BookingPointsOver25",
+      "homeO": 82, "awayO": 74,      // % overall
+      "homeH": 74, "awayA": 74,      // % home (local) / away (visitante)
+      "homePO": "31/38", "awayPO": "28/38",   // muestra overall
+      "homeP": "14/19", "awayP": "14/19",     // muestra home/away
+      "Booking Points": true, "All": true, "BTTS": false, ... }
+  ],
+  "leaguetable": [...], "leaguetableresults": [...],
+  "recentmatches": [...], "homestreaks": [...], "awaystreaks": [...],
+  "headtohead": [...],
+  "hometeam": "...", "awayteam": "...", "hometeamid": ..., "awayteamid": ...,
+  "homeleaguename": "...", "awayleaguename": "...",
+  "fixtureleaguename": "...", "fixtureleagueslug": "...",
+  "subscriptionType": null | "Premium", "refereeid": ...
+}
+```
+
+`stats[]` trae ~110–118 indicadores por fixture, cada uno con % y muestra
+Home/Away/Overall ya calculados — reemplaza en gran parte lo que
+`build_comparativas.py` armaba a mano cruzando `teamStats` del listado
+general. `leaguetable` puede venir vacío si la temporada no arrancó.
 
 ### Descubrimientos técnicos clave
 
@@ -442,29 +556,75 @@ Esto genera:
 - **Compresión**: `Accept-Encoding` debe ser solo `gzip, deflate`. Si se incluye `br` o `zstd` y no están instaladas las librerías de descompresión, el body llega como bytes binarios ilegibles aunque el status sea 200.
 - **TLS fingerprinting**: el endpoint `getComparisonStatsAsJson.php` bloqueaba con 403 aunque los headers fueran idénticos a los del navegador. La causa real era el fingerprint TLS de `requests` vs un navegador real. Se resolvió usando `curl_cffi` con `impersonate="firefox135"`.
 - **Redes con inspección SSL corporativa (Fortinet, etc.)**: pueden generar errores de certificado y bloqueos que se confunden con rechazos del sitio. Si aparecen 403/errores de certificado sin explicación clara, verificar primero la red.
-- **Cache-buster**: el parámetro `v=` en `getFixturesBySingleStatAsJson.php` se valida en el servidor; si vence, se recaptura desde el navegador (parece incremental, subió de `2026630` a `2026631`).
+- **Cache-buster**: el parámetro `v` en `getFixturesBySingleStatAsJson.php` se valida en el servidor; si vence, se recaptura desde el navegador (parece incremental, subió de `2026630` a `2026631`). `obtener_v.py` lo resuelve automáticamente sin intervención manual.
 - **Join de stats**: la clave correcta para cruzar `teamStats` con un fixture es `home_league` / `away_league` (liga doméstica del equipo), **no** `league` (que puede ser una copa internacional). Usar `league` rompe el lookup silenciosamente en partidos de copa.
 - **Ligas Premium**: el 98% de las ligas Premium no traen `teamStats` ni odds; el pipeline las descarta por defecto. El 5% residual de datos faltantes en ligas gratis es por ascensos/descensos de temporada (mismatch de código de liga).
 
-### Flujo del pipeline HTTP (standalone)
+### Puntos frágiles a vigilar
 
-```
-build_comparativas.py ──► comparativas_staging.json (listado filtrado)
-         │
-         ▼
-build_fixture_details_final.py ──► detalles_fixtures/fixture_<id>.json
-  ├─ odds (mercados + casas)
-  ├─ chances (mercados destacados)
-  ├─ team-records (standings)
-  ├─ comparison-stats (hit-rates)
-  └─ recent-results (histórico partido a partido + tarjetas rojas)
-```
+> Revisados y priorizados en sesión posterior a v4. Solo uno queda como riesgo
+> activo real; el resto está descartado o ya mitigado.
+
+1. **`COOKIE_STRING` hardcodeada — sin impacto real, confirmado.** Son todas
+   cookies de analytics/publicidad de terceros (`_ga`, `__gads`, `__gpi`,
+   `_pubcid`, `FCCDCF`), ninguna es cookie de sesión propia del sitio. El 403
+   que se resolvió con `curl_cffi` era por fingerprint TLS, no por esta cookie.
+   No tocar salvo que empiece a fallar (señal clara: 401/403 después de que
+   venía andando).
+
+2. **Referer con slug de texto fijo — riesgo bajo, revisado en detalle.** La
+   URL tiene forma `/fixture/<ID>/<slug-de-texto>`. Se confirmó que
+   `{external_id}` **sí se reemplaza correctamente por partido** — verificado
+   contra `comparativas_staging.json`. Lo único fijo es el slug de texto final
+   (nombres de equipos), que en la inmensa mayoría de sitios es cosmético/SEO
+   y no se valida server-side. Se decidió explícitamente **no tocarlo**.
+
+3. **`curl_cffi` / fingerprint TLS — único punto con riesgo activo real.** No
+   depende de nada que el equipo controle — depende de que Adam Choi no
+   endurezca su WAF. No hay forma de arreglarlo preventivamente más allá del
+   fallback ya existente a `requests` normal (que probablemente reciba 403
+   igual si `curl_cffi` deja de servir). Único mantenimiento sugerido: al
+   actualizar la librería, confirmar que `impersonate="firefox135"` siga
+   siendo un fingerprint soportado (estos nombres van rotando de versión en
+   versión).
+
+4. **El `v` que vence — resuelto, no requiere intervención.** Ya lo resuelve
+   `obtener_v.py` automáticamente (Playwright headless) en cada corrida de
+   `build_comparativas.py`. El default hardcodeado puede seguir desactualizado
+   sin problema porque no se usa salvo que se fuerce un valor puntual con `--v`.
+
+5. **Fortinet / inspección SSL corporativa — condición de entorno, no de
+   código.** No arreglable desde el script. Ya documentado como primer
+   diagnóstico si aparece un bloqueo sin explicación clara (headers idénticos
+   al navegador, cookie fresca, y aun así falla).
+
+6. **`Accept-Encoding` sin `br`/`zstd` — resuelto y estable.** Decisión de
+   configuración, no algo que "venza" con el tiempo. Sin riesgo de seguimiento.
 
 ### Salida actual
 
 - **JSON de staging** (`comparativas_staging.json`): listado de fixtures filtrados con stats agregadas.
 - **JSON de detalle por partido** (`detalles_fixtures/fixture_<external_id>.json`): objeto con 5 claves (`odds`, `chances`, `team_records`, `recent_results`, `comparison_stats`) listo para ser transformado al modelo de dominio de Beet.
 - **Datos ya extraídos en disco**: todos los partidos solicitados fueron procesados exitosamente mediante `run_pipeline.py`; los JSON crudos están disponibles para análisis y para alimentar el futuro motor de simulación. **Aún no se ha implementado el consumo de estos JSON dentro del paquete `beet/` ni se han mapeado al modelo `Comparativa`.**
+
+### Próximos pasos del pipeline HTTP (pendientes)
+
+1. **Mapear las 5 fuentes al modelo `Comparativa` final de Beet** — bloqueado
+   por decidir primero Pydantic vs dataclasses.
+2. **Cruzar el staging de listado (`comparativas_staging.json`) con el
+   detalle por partido** vía `external_id` — decidir si se mergean en un solo
+   objeto `Comparativa` o quedan como dos etapas separadas antes del merge.
+3. **Definir `estrella`/`hit_mercado_resaltado` formalmente** — candidatos
+   naturales: `chances[].chance` y `quickStats` (ambos ya traen % + cuota
+   asociada). Confirmar antes por qué `chances` viene vacío en algunos
+   fixtures.
+4. **Correr el pipeline a mayor escala** (no solo 5 fixtures) para armar el
+   dataset real — vigilar rate-limiting/bloqueos nuevos a volumen alto, no
+   probado todavía más allá de una corrida chica.
+5. Revisar `homestreaks`/`awaystreaks` de `comparison_stats` y el resto de
+   campos de `recent_results` (fouls, shots, offsides, referee) no explorados
+   en profundidad todavía — evaluar cuáles aportan a los mercados que Beet va
+   a calibrar primero.
 
 ### Por qué aún no está en `beet/`
 
@@ -485,7 +645,7 @@ build_fixture_details_final.py ──► detalles_fixtures/fixture_<id>.json
 | 4 | ✅ | Datos persistentes en JSON |
 | 5 | 🔲 | Motor de simulación (services/) |
 | 6 | ⏳ | Calibración empírica + backtesting |
-| 7 | 🔲 | Automatización de captura (selenium/playwright) |
+| 7 | ❌ | ~~Automatización de captura (selenium/playwright)~~ — descartada, superada por 2b (pipeline HTTP directo elimina la necesidad de capturar screenshots/PDF) |
 | 7b | ⏳ | Integrar pipeline HTTP al paquete `beet/` (reemplazar o complementar PDFs) |
 | 8 | ✅ | API Keys fuera del código (`~/.beet/config.json` + diálogo inicial) |
 
