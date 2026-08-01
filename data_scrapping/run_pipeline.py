@@ -19,6 +19,14 @@ Uso básico (equivalente a lo que veníamos corriendo en 3 comandos separados):
 Bajar el detalle de TODOS los fixtures del staging (sin límite):
     python run_pipeline.py --stats BTTS
 
+Filtrar por fecha (partidos de hoy, mañana, o los próximos 7 días):
+    python run_pipeline.py --stats BTTS --hoy
+    python run_pipeline.py --stats BTTS --manana
+    python run_pipeline.py --stats BTTS --semana
+
+Rango custom de fechas:
+    python run_pipeline.py --stats BTTS --desde 2026-08-01 --hasta 2026-08-05
+
 Ver qué haría sin ejecutar nada todavía (dry-run):
     python run_pipeline.py --stats BTTS --limit-detalles 5 --dry-run
 """
@@ -52,6 +60,12 @@ def main():
     parser.add_argument("--delay", type=float, default=0.5, help="delay entre requests de detalle (segundos)")
     parser.add_argument("--incluir-copas", action="store_true", help="pasa --incluir-copas a build_comparativas.py")
     parser.add_argument("--incluir-premium", action="store_true", help="pasa --incluir-premium a build_comparativas.py")
+    grupo_fecha = parser.add_mutually_exclusive_group()
+    grupo_fecha.add_argument("--hoy", action="store_true", help="solo partidos de hoy")
+    grupo_fecha.add_argument("--manana", action="store_true", help="solo partidos de mañana")
+    grupo_fecha.add_argument("--semana", action="store_true", help="partidos de hoy hasta 7 días adelante")
+    parser.add_argument("--desde", default=None, help="fecha desde YYYY-MM-DD (alternativa a --hoy/--manana/--semana)")
+    parser.add_argument("--hasta", default=None, help="fecha hasta YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true", help="mostrar los comandos sin ejecutarlos")
     args = parser.parse_args()
 
@@ -67,6 +81,17 @@ def main():
         cmd_comparativas.append("--incluir-copas")
     if args.incluir_premium:
         cmd_comparativas.append("--incluir-premium")
+    if args.hoy:
+        cmd_comparativas.append("--hoy")
+    elif args.manana:
+        cmd_comparativas.append("--manana")
+    elif args.semana:
+        cmd_comparativas.append("--semana")
+    else:
+        if args.desde:
+            cmd_comparativas += ["--desde", args.desde]
+        if args.hasta:
+            cmd_comparativas += ["--hasta", args.hasta]
     run_step("1/2 - Listado de fixtures + stats agregadas (staging)", cmd_comparativas, args.dry_run)
 
     # ---------- Paso 2: build_fixture_details_final.py ----------

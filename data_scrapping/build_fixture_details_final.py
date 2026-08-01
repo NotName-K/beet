@@ -12,15 +12,9 @@ from typing import Optional
 import requests
 import urllib3
 
-try:
-    from curl_cffi import requests as cffi_requests
-    HAS_CURL_CFFI = True
-except ImportError:
-    HAS_CURL_CFFI = False
-
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# ========== HEADERS PARA api.choistats.com (odds, chances, team-records) ==========
+# ========== HEADERS PARA api.choistats.com (odds, team-records) ==========
 HEADERS_CHOISTATS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0",
     "Accept": "application/json, text/plain, */*",
@@ -36,25 +30,8 @@ HEADERS_CHOISTATS = {
     "Sec-Fetch-Site": "same-origin",
 }
 
-# ========== HEADERS PARA www.adamchoi.co.uk directo (comparison-stats) ==========
-# Copiados EXACTOS de un cURL real del navegador para este endpoint puntual.
-# OJO: a diferencia de choistats.com, acá el navegador NO manda Origin ni
-# X-AdamChoi-Api-Token — mandarlos de más es lo que probablemente gatillaba el 403.
-HEADERS_ADAMCHOI_DIRECT = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0",
-    "Accept": "application/json, text/plain, */*",
-    "Accept-Language": "en-US,en;q=0.5",
-    "Accept-Encoding": "gzip, deflate",
-    "Authorization-Client": "ADAMCHOI.CO.UK",
-    "Sec-GPC": "1",
-    "Connection": "keep-alive",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "TE": "trailers",
-}
-
-# Cookie exacta (sin sb-bhjrlmnnseavaoapqlkr-auth-token, no hace falta)
+# Cookie exacta usada por get_session() para todos los endpoints (sin
+# sb-bhjrlmnnseavaoapqlkr-auth-token, no hace falta)
 COOKIE_STRING = (
     "_ga_8MTGZ91RT2=GS2.1.s1785477942$o14$g1$t1785477947$j55$l0$h0; "
     "_ga=GA1.3.1259201419.1776566076; "
@@ -91,26 +68,6 @@ def get_session(external_id: int, headers: dict) -> requests.Session:
     session.verify = False
     return session
 
-def get_json_cffi(url: str, params: dict, external_id: int, label: str, headers: dict) -> Optional[dict]:
-    """Igual que get_json pero usando curl_cffi para imitar el fingerprint TLS de Firefox real."""
-    req_headers = dict(headers)
-    req_headers["Referer"] = f"https://www.adamchoi.co.uk/fixture/{external_id}/austria-bundesliga-lask-linz-vs-grazer-ak"
-    req_headers["Cookie"] = COOKIE_STRING
-    try:
-        r = cffi_requests.get(url, params=params, headers=req_headers, impersonate="firefox135", timeout=20)
-        print(f"    [{label} via curl_cffi] status={r.status_code}")
-        if r.status_code != 200:
-            print(f"    [{label} via curl_cffi] body preview: {r.text[:300]!r}")
-            return None
-        data = r.text
-        if not data or not (data.lstrip().startswith('{') or data.lstrip().startswith('[')):
-            print(f"    [{label} via curl_cffi] warning: respuesta no parece JSON")
-            return None
-        return json.loads(data)
-    except Exception as e:
-        print(f"    [{label} via curl_cffi] ERROR: {e}")
-        return None
-
 def get_json(url: str, params: dict, external_id: int, label: str, headers: dict = HEADERS_CHOISTATS) -> Optional[dict]:
     session = get_session(external_id, headers)
     try:
@@ -139,15 +96,17 @@ def get_json(url: str, params: dict, external_id: int, label: str, headers: dict
 def fetch_fixture_detail(external_id: int, token: str) -> dict:
     print(f"  Descargando detalle de fixture {external_id} ...")
 
+    # chances y comparison_stats: podados a nivel de descarga (no solo de
+    # extracción). chances es el output opaco del modelo del proveedor
+    # (rompe independencia); comparison_stats es 100% derivable de
+    # raw_match_history (verificado: solo agregados/porcentajes sobre la
+    # misma ventana de partidos que ya se guarda cruda). Ninguno de los dos
+    # se pierde para siempre por no pedirlo: chances nunca fue nuestro y
+    # comparison_stats siempre se puede recalcular.
     odds = get_json(
         f"https://api.choistats.com/api/widget/match/{external_id}/odds",
         {"clflc": "abc", "lang": "en", "token": token},
         external_id, "odds",
-    )
-    chances = get_json(
-        f"https://api.choistats.com/api/widget/chances/fixture/{external_id}",
-        {"clflc": "abc", "bookmakerId": "", "token": token},
-        external_id, "chances",
     )
     team_records = get_json(
         f"https://api.choistats.com/api/widget/match/{external_id}/team-records",
@@ -160,39 +119,12 @@ def fetch_fixture_detail(external_id: int, token: str) -> dict:
         external_id, "recent-results",
         headers=HEADERS_RECENT_RESULTS,
     )
-    if HAS_CURL_CFFI:
-        comparison_stats = get_json_cffi(
-            "https://www.adamchoi.co.uk/scripts/data/json/scripts/pages/comparison/getComparisonStatsAsJson.php",
-            {"clflc": "abc", "fixtureid": external_id, "numrecentmatches": 10},
-            external_id, "comparison-stats",
-            headers=HEADERS_ADAMCHOI_DIRECT,
-        )
-        if comparison_stats is None:
-            print("    [comparison-stats] curl_cffi tampoco funcionó, reintentando con requests normal...")
-            comparison_stats = get_json(
-                "https://www.adamchoi.co.uk/scripts/data/json/scripts/pages/comparison/getComparisonStatsAsJson.php",
-                {"clflc": "abc", "fixtureid": external_id, "numrecentmatches": 10},
-                external_id, "comparison-stats",
-                headers=HEADERS_ADAMCHOI_DIRECT,
-            )
-    else:
-        print("    [comparison-stats] curl_cffi no instalado (pip install curl_cffi), usando requests normal")
-        comparison_stats = get_json(
-            "https://www.adamchoi.co.uk/scripts/data/json/scripts/pages/comparison/getComparisonStatsAsJson.php",
-            {"clflc": "abc", "fixtureid": external_id, "numrecentmatches": 10},
-            external_id, "comparison-stats",
-            headers=HEADERS_ADAMCHOI_DIRECT,
-        )
-    if comparison_stats is None:
-        print("    [comparison-stats] nota: sigue bloqueado, se guarda como null y se sigue")
 
     return {
         "external_id": external_id,
         "odds": odds,
-        "chances": chances,
         "team_records": team_records,
         "recent_results": recent_results,
-        "comparison_stats": comparison_stats,
     }
 
 def run(external_ids: list[int], out_dir: str, token: str, delay_s: float):
@@ -204,7 +136,7 @@ def run(external_ids: list[int], out_dir: str, token: str, delay_s: float):
         print(f"[{i}/{len(external_ids)}]")
         detail = fetch_fixture_detail(eid, token)
 
-        missing = [k for k in ("odds", "chances") if detail.get(k) is None]
+        missing = [k for k in ("odds",) if detail.get(k) is None]
         if missing:
             failed.append((eid, missing))
 

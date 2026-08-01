@@ -30,12 +30,13 @@ Uso:
 
 import argparse
 import json
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
 import requests
 
-from obtener_v import obtener_v_actual
+from obtener_v import obtener_v_cacheado
 
 BASE_URL = "https://www.adamchoi.co.uk/scripts/data/json/scripts/getFixturesBySingleStatAsJson.php"
 
@@ -185,21 +186,78 @@ def build_rows(payload_by_stat: dict[str, dict], only_leagues: bool = True, excl
     return rows
 
 
-def run(stat_types: list[str], out_path: str, only_leagues: bool = True, cache_buster: Optional[str] = None, exclude_premium: bool = True):
-    if cache_buster is None:
-        print("No se pasó --v, obteniéndolo automáticamente (sin navegador)...")
-        cache_buster = obtener_v_actual()
-        print(f"  v obtenido: {cache_buster}")
+def filter_by_date(rows: list[dict], fecha_desde: Optional[date], fecha_hasta: Optional[date]) -> list[dict]:
+    """
+    Filtra filas por fecha (usando date_epoch_ms, ya viene alineado a la zona
+    horaria pasada en timezoneOffset=300 = UTC-5). Si fecha_desde/fecha_hasta
+    son None, no se filtra por ese extremo.
+    """
+    if fecha_desde is None and fecha_hasta is None:
+        return rows
+
+    filtered = []
+    for r in rows:
+        ms = r.get("date_epoch_ms")
+        if ms is None:
+            continue
+        row_date = datetime.fromtimestamp(ms / 1000).date()
+        if fecha_desde is not None and row_date < fecha_desde:
+            continue
+        if fecha_hasta is not None and row_date > fecha_hasta:
+            continue
+        filtered.append(r)
+    return filtered
+
+
+def run(stat_types: list[str], out_path: str, only_leagues: bool = True, cache_buster: Optional[str] = None,
+        exclude_premium: bool = True, fecha_desde: Optional[date] = None, fecha_hasta: Optional[date] = None):
+    v_autogestionado = cache_buster is None
+    if v_autogestionado:
+        print("No se pasó --v, usando cache local si existe (evita abrir el navegador)...")
+        cache_buster = obtener_v_cacheado()
+        print(f"  v: {cache_buster}")
 
     payload_by_stat = {}
     for stat in stat_types:
         print(f"Descargando statType={stat} (v={cache_buster}) ...")
-        payload_by_stat[stat] = fetch_stat(stat, cache_buster)
+        try:
+            payload_by_stat[stat] = fetch_stat(stat, cache_buster)
+        except requests.HTTPError as e:
+            # Si el 'v' fue auto-obtenido (no lo forzó el usuario con --v) y el
+            # servidor devuelve 401, lo más probable es que el cache local ya
+            # esté vencido -- refrescamos desde el navegador y reintentamos
+            # una sola vez. Si el usuario pasó --v a mano, respetamos su
+            # valor y no reintentamos por él.
+            status = e.response.status_code if e.response is not None else None
+            if v_autogestionado and status == 401:
+                print(f"  401 con v cacheado ({cache_buster}) -- refrescando desde el navegador...")
+                cache_buster = obtener_v_cacheado(forzar_refresh=True)
+                print(f"  v refrescado: {cache_buster}")
+                payload_by_stat[stat] = fetch_stat(stat, cache_buster)
+            else:
+                raise
         n_dates = len(payload_by_stat[stat].get("dates", []))
         n_teams = len(payload_by_stat[stat].get("teamStats", {}))
         print(f"  OK: {n_dates} fechas, {n_teams} equipos en teamStats")
 
     rows = build_rows(payload_by_stat, only_leagues=only_leagues, exclude_premium=exclude_premium)
+
+    # Orden: por hora de kickoff ascendente. Sin esto, el orden de las filas
+    # es el que trae la respuesta cruda del sitio (agrupado por fecha/liga/
+    # país, no necesariamente por hora dentro de ese agrupamiento) -- y
+    # --limit-detalles en build_fixture_details_final.py simplemente toma
+    # las primeras N filas del staging tal cual, así que sin este sort podía
+    # terminar detallando un partido de dentro de varios días en vez del más
+    # próximo. Filas sin kickoff_epoch_ms (no debería pasar, pero por las
+    # dudas) quedan al final en vez de reventar el sort.
+    rows.sort(key=lambda r: (r.get("kickoff_epoch_ms") is None, r.get("kickoff_epoch_ms") or 0))
+
+    total_antes_filtro_fecha = len(rows)
+    rows = filter_by_date(rows, fecha_desde, fecha_hasta)
+    if fecha_desde is not None or fecha_hasta is not None:
+        desde_str = fecha_desde.isoformat() if fecha_desde else "(sin límite)"
+        hasta_str = fecha_hasta.isoformat() if fecha_hasta else "(sin límite)"
+        print(f"Filtro de fecha [{desde_str} .. {hasta_str}]: {total_antes_filtro_fecha} -> {len(rows)} filas")
 
     out = Path(out_path)
     out.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -254,7 +312,30 @@ if __name__ == "__main__":
         "pasa, se obtiene automáticamente (sin navegador) con obtener_v.py. Pasalo "
         "manualmente solo si querés forzar un valor específico.",
     )
+
+    grupo_fecha = parser.add_mutually_exclusive_group()
+    grupo_fecha.add_argument("--hoy", action="store_true", help="Solo partidos de hoy.")
+    grupo_fecha.add_argument("--manana", action="store_true", help="Solo partidos de mañana.")
+    grupo_fecha.add_argument("--semana", action="store_true", help="Partidos de hoy hasta 7 días adelante.")
+    parser.add_argument("--desde", default=None, help="Fecha desde, formato YYYY-MM-DD (inclusive). Combinable con --hasta en vez de los atajos --hoy/--manana/--semana.")
+    parser.add_argument("--hasta", default=None, help="Fecha hasta, formato YYYY-MM-DD (inclusive).")
+
     args = parser.parse_args()
+
+    hoy = date.today()
+    fecha_desde: Optional[date] = None
+    fecha_hasta: Optional[date] = None
+    if args.hoy:
+        fecha_desde = fecha_hasta = hoy
+    elif args.manana:
+        fecha_desde = fecha_hasta = hoy + timedelta(days=1)
+    elif args.semana:
+        fecha_desde, fecha_hasta = hoy, hoy + timedelta(days=7)
+    else:
+        if args.desde:
+            fecha_desde = date.fromisoformat(args.desde)
+        if args.hasta:
+            fecha_hasta = date.fromisoformat(args.hasta)
 
     run(
         stat_types=[s.strip() for s in args.stats.split(",")],
@@ -262,4 +343,6 @@ if __name__ == "__main__":
         only_leagues=not args.incluir_copas,
         cache_buster=args.v,
         exclude_premium=not args.incluir_premium,
+        fecha_desde=fecha_desde,
+        fecha_hasta=fecha_hasta,
     )
