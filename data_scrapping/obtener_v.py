@@ -43,40 +43,58 @@ from playwright.sync_api import sync_playwright
 CACHE_PATH = Path(__file__).parent / ".v_cache.json"
 
 
-def obtener_v_actual(url_fixtures: str = "https://www.adamchoi.co.uk/fixtures", timeout_ms: int = 20000) -> str:
+def obtener_v_actual(url_fixtures: str = "https://www.adamchoi.co.uk/fixtures", timeout_ms: int = 25000, intentos: int = 2) -> str:
     """Navega a la página de fixtures y captura el `v` real que usa el sitio.
 
     No usa wait_until="networkidle": el sitio tiene tracking/ads corriendo
     en loop que nunca dejan la red "quieta", así que networkidle expira por
     timeout aunque la página cargó bien y ya disparó la request que nos
     interesa. En vez de eso, esperamos puntualmente esa respuesta.
-    """
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        try:
-            with page.expect_response(
-                lambda response: "getFixturesBySingleStatAsJson.php" in response.url,
-                timeout=timeout_ms,
-            ) as response_info:
-                page.goto(url_fixtures, wait_until="domcontentloaded", timeout=timeout_ms)
-            response = response_info.value
-        except Exception as e:
-            raise RuntimeError(
-                "No se pudo capturar el parámetro 'v' -- la página puede no haber "
-                "disparado la llamada a getFixturesBySingleStatAsJson.php a tiempo, "
-                "o no cargó (revisar conectividad/bloqueo de red). "
-                f"Error original: {e}"
-            ) from e
-        finally:
-            browser.close()
 
-    qs = parse_qs(urlparse(response.url).query)
-    if "v" not in qs:
-        raise RuntimeError(
-            f"Se capturó la respuesta pero sin parámetro 'v' en la URL: {response.url}"
-        )
-    return qs["v"][0]
+    Reintenta hasta `intentos` veces (navegador nuevo cada vez) antes de
+    darse por vencido -- verificado que el sitio a veces tarda más de lo
+    esperado en disparar esa llamada puntual (ads/analytics de por medio),
+    así que un solo intento puede fallar por timing sin ser un problema
+    real de conectividad.
+    """
+    ultimo_error: Exception | None = None
+    for intento in range(1, intentos + 1):
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                page = browser.new_page()
+                try:
+                    with page.expect_response(
+                        lambda response: "getFixturesBySingleStatAsJson.php" in response.url,
+                        timeout=timeout_ms,
+                    ) as response_info:
+                        page.goto(url_fixtures, wait_until="domcontentloaded", timeout=timeout_ms)
+                    response = response_info.value
+                finally:
+                    browser.close()
+            qs = parse_qs(urlparse(response.url).query)
+            if "v" not in qs:
+                raise RuntimeError(
+                    f"Se capturó la respuesta pero sin parámetro 'v' en la URL: {response.url}"
+                )
+            return qs["v"][0]
+        except Exception as e:
+            ultimo_error = e
+            if intento < intentos:
+                print(
+                    f"    [obtener_v] intento {intento}/{intentos} falló ({e}), reintentando...",
+                    file=sys.stderr,
+                )
+                continue
+
+    raise RuntimeError(
+        f"No se pudo capturar el parámetro 'v' tras {intentos} intento(s) -- la página puede no "
+        "haber disparado la llamada a getFixturesBySingleStatAsJson.php a tiempo, o no cargó "
+        "(revisar conectividad/bloqueo de red; si falla de forma consistente, probar desde otra "
+        "red por si hay inspección TLS de por medio, como pasó antes con comparison-stats). "
+        f"Último error: {ultimo_error}"
+    ) from ultimo_error
+        
 
 
 def _leer_cache() -> Optional[str]:
