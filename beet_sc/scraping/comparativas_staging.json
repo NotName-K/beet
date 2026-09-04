@@ -1,0 +1,1150 @@
+[
+  {
+    "fixture_id": 219737,
+    "external_id": 19664023,
+    "date_epoch_ms": 1787468400000,
+    "kickoff_epoch_ms": 1787529600000,
+    "league_partido": "ECU1",
+    "league_name": "Liga Pro",
+    "country": "Ecuador",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "LDU Quito",
+    "awayteam": "Emelec",
+    "home_league_domestica": "ECU1",
+    "away_league_domestica": "ECU1",
+    "home_dec_odds": 1.909,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198650200-1801990448~10/11",
+    "away_dec_odds": 1.909,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198650200-1801990448~10/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "3/12",
+          "percent": 25
+        },
+        "home_team_all_window": {
+          "num_matches": "8/25",
+          "percent": 32
+        },
+        "away_team_away_window": {
+          "num_matches": "4/12",
+          "percent": 33
+        },
+        "away_team_all_window": {
+          "num_matches": "10/25",
+          "percent": 40
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 219994,
+    "external_id": 19636679,
+    "date_epoch_ms": 1787468400000,
+    "kickoff_epoch_ms": 1787531400000,
+    "league_partido": "ARG1",
+    "league_name": "Primera Division",
+    "country": "Argentina",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Racing Club",
+    "awayteam": "Boca Juniors",
+    "home_league_domestica": "ARG1",
+    "away_league_domestica": "ARG1",
+    "home_dec_odds": 2.05,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029635-1843455014~21/20",
+    "away_dec_odds": 2.05,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029635-1843455014~21/20",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "6/10",
+          "percent": 60
+        },
+        "home_team_all_window": {
+          "num_matches": "12/23",
+          "percent": 52
+        },
+        "away_team_away_window": {
+          "num_matches": "6/11",
+          "percent": 55
+        },
+        "away_team_all_window": {
+          "num_matches": "11/22",
+          "percent": 50
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220139,
+    "external_id": 19715271,
+    "date_epoch_ms": 1787468400000,
+    "kickoff_epoch_ms": 1787533200000,
+    "league_partido": "MX1",
+    "league_name": "Liga MX",
+    "country": "Mexico",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Pumas UNAM",
+    "awayteam": "Necaxa",
+    "home_league_domestica": "MX1",
+    "away_league_domestica": "MX1",
+    "home_dec_odds": 1.615,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199037530-1843492943~8/13",
+    "away_dec_odds": 1.615,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199037530-1843492943~8/13",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "0/2",
+          "percent": 0
+        },
+        "home_team_all_window": {
+          "num_matches": "2/4",
+          "percent": 50
+        },
+        "away_team_away_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "away_team_all_window": {
+          "num_matches": "4/4",
+          "percent": 100
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220030,
+    "external_id": 19713054,
+    "date_epoch_ms": 1787468400000,
+    "kickoff_epoch_ms": 1787534100000,
+    "league_partido": "COL1",
+    "league_name": "Colombia Primera A",
+    "country": "Colombia",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Junior FC",
+    "awayteam": "Once Caldas",
+    "home_league_domestica": "COL1",
+    "away_league_domestica": "COL1",
+    "home_dec_odds": 1.727,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198648348-1796440379~8/11",
+    "away_dec_odds": 1.727,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198648348-1796440379~8/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "6/14",
+          "percent": 43
+        },
+        "home_team_all_window": {
+          "num_matches": "13/27",
+          "percent": 48
+        },
+        "away_team_away_window": {
+          "num_matches": "10/12",
+          "percent": 83
+        },
+        "away_team_all_window": {
+          "num_matches": "19/25",
+          "percent": 76
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220124,
+    "external_id": 19713616,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787589000000,
+    "league_partido": "I1",
+    "league_name": "Serie A",
+    "country": "Italy",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Bologna",
+    "awayteam": "Lazio",
+    "home_league_domestica": "I1",
+    "away_league_domestica": "I1",
+    "home_dec_odds": 1.909,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=196357766-1507847578~10/11",
+    "away_dec_odds": 1.909,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=196357766-1507847578~10/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "6/19",
+          "percent": 32
+        },
+        "home_team_all_window": {
+          "num_matches": "17/38",
+          "percent": 45
+        },
+        "away_team_away_window": {
+          "num_matches": "3/19",
+          "percent": 16
+        },
+        "away_team_all_window": {
+          "num_matches": "11/38",
+          "percent": 29
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220768,
+    "external_id": 19777699,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787589600000,
+    "league_partido": "SAU1",
+    "league_name": "Saudi Pro League",
+    "country": "Saudi Arabia",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "NEOM SC",
+    "awayteam": "Al-Qadsiah",
+    "home_league_domestica": "SAU1",
+    "away_league_domestica": "SAU1",
+    "home_dec_odds": 1.571,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199039997-1843519467~4/7",
+    "away_dec_odds": 1.571,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199039997-1843519467~4/7",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_team_all_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "away_team_away_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "away_team_all_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220193,
+    "external_id": 19745119,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787590800000,
+    "league_partido": "SP2",
+    "league_name": "Segunda Division",
+    "country": "Spain",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Celta Fortuna",
+    "awayteam": "FC Andorra",
+    "home_league_domestica": "SP2",
+    "away_league_domestica": "SP2",
+    "home_dec_odds": 1.667,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198725872-1932035725~4/6",
+    "away_dec_odds": 1.667,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198725872-1932035725~4/6",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "home_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_away_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220072,
+    "external_id": 19713978,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787590800000,
+    "league_partido": "DEN1",
+    "league_name": "Superliga",
+    "country": "Denmark",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Brøndby IF",
+    "awayteam": "Silkeborg IF",
+    "home_league_domestica": "DEN1",
+    "away_league_domestica": "DEN1",
+    "home_dec_odds": 1.667,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198649759-1802293406~4/6",
+    "away_dec_odds": 1.667,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198649759-1802293406~4/6",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "home_team_all_window": {
+          "num_matches": "2/4",
+          "percent": 50
+        },
+        "away_team_away_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "away_team_all_window": {
+          "num_matches": "2/4",
+          "percent": 50
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220180,
+    "external_id": 19635907,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787590800000,
+    "league_partido": "SA1",
+    "league_name": "Swedish Allsvenskan",
+    "country": "Sweden",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Malmö FF",
+    "awayteam": "Djurgårdens IF",
+    "home_league_domestica": "SA1",
+    "away_league_domestica": "SA1",
+    "home_dec_odds": 1.5,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198663054-1802322007~1/2",
+    "away_dec_odds": 1.5,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198663054-1802322007~1/2",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "7/8",
+          "percent": 88
+        },
+        "home_team_all_window": {
+          "num_matches": "12/17",
+          "percent": 71
+        },
+        "away_team_away_window": {
+          "num_matches": "3/7",
+          "percent": 43
+        },
+        "away_team_all_window": {
+          "num_matches": "8/16",
+          "percent": 50
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220192,
+    "external_id": 19732725,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787592600000,
+    "league_partido": "SP1",
+    "league_name": "La Liga",
+    "country": "Spain",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Osasuna",
+    "awayteam": "Levante",
+    "home_league_domestica": "SP1",
+    "away_league_domestica": "SP1",
+    "home_dec_odds": 1.909,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=197219356-1613053788~10/11",
+    "away_dec_odds": 1.909,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=197219356-1613053788~10/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "14/19",
+          "percent": 74
+        },
+        "home_team_all_window": {
+          "num_matches": "21/38",
+          "percent": 55
+        },
+        "away_team_away_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220179,
+    "external_id": 19726817,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787592600000,
+    "league_partido": "RUS1",
+    "league_name": "Premier League",
+    "country": "Russia",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Baltika Kaliningrad",
+    "awayteam": "Rubin Kazan",
+    "home_league_domestica": "RUS1",
+    "away_league_domestica": "RUS1",
+    "home_dec_odds": null,
+    "home_bet_url": null,
+    "away_dec_odds": null,
+    "away_bet_url": null,
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "2/2",
+          "percent": 100
+        },
+        "home_team_all_window": {
+          "num_matches": "3/4",
+          "percent": 75
+        },
+        "away_team_away_window": {
+          "num_matches": "2/2",
+          "percent": 100
+        },
+        "away_team_all_window": {
+          "num_matches": "4/4",
+          "percent": 100
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220141,
+    "external_id": 19715988,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787594400000,
+    "league_partido": "N2",
+    "league_name": "Eerste Divisie",
+    "country": "Netherlands",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Jong PSV",
+    "awayteam": "TOP Oss",
+    "home_league_domestica": "N2",
+    "away_league_domestica": "N2",
+    "home_dec_odds": 1.444,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198655177-1802341492~4/9",
+    "away_dec_odds": 1.444,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198655177-1802341492~4/9",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_team_all_window": {
+          "num_matches": "2/2",
+          "percent": 100
+        },
+        "away_team_away_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220142,
+    "external_id": 19715989,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787594400000,
+    "league_partido": "N2",
+    "league_name": "Eerste Divisie",
+    "country": "Netherlands",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Jong FC Utrecht",
+    "awayteam": "Heracles Almelo",
+    "home_league_domestica": "N2",
+    "away_league_domestica": "N2",
+    "home_dec_odds": 1.5,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198655181-1929388779~1/2",
+    "away_dec_odds": 1.5,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198655181-1929388779~1/2",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_team_all_window": {
+          "num_matches": "2/2",
+          "percent": 100
+        },
+        "away_team_away_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "away_team_all_window": {
+          "num_matches": "2/2",
+          "percent": 100
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220769,
+    "external_id": 19777698,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787594400000,
+    "league_partido": "SAU1",
+    "league_name": "Saudi Pro League",
+    "country": "Saudi Arabia",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Al Ittihad",
+    "awayteam": "Al Hazm",
+    "home_league_domestica": "SAU1",
+    "away_league_domestica": "SAU1",
+    "home_dec_odds": null,
+    "home_bet_url": null,
+    "away_dec_odds": 1.667,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199040005-1843592597~4/6",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_team_all_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "away_team_away_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "away_team_all_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220203,
+    "external_id": 19746638,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787596200000,
+    "league_partido": "T1",
+    "league_name": "Turkish Super Lig",
+    "country": "Turkey",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Kocaelispor",
+    "awayteam": "Amed SK",
+    "home_league_domestica": "T1",
+    "away_league_domestica": "T1",
+    "home_dec_odds": 1.833,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198726529-1931830442~5/6",
+    "away_dec_odds": 1.833,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198726529-1931830442~5/6",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "home_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_away_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220125,
+    "external_id": 19713611,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787597100000,
+    "league_partido": "I1",
+    "league_name": "Serie A",
+    "country": "Italy",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Roma",
+    "awayteam": "Fiorentina",
+    "home_league_domestica": "I1",
+    "away_league_domestica": "I1",
+    "home_dec_odds": 1.909,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=196357789-1507965063~10/11",
+    "away_dec_odds": 1.909,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=196357789-1507965063~10/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "5/19",
+          "percent": 26
+        },
+        "home_team_all_window": {
+          "num_matches": "13/38",
+          "percent": 34
+        },
+        "away_team_away_window": {
+          "num_matches": "10/19",
+          "percent": 53
+        },
+        "away_team_all_window": {
+          "num_matches": "22/38",
+          "percent": 58
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220123,
+    "external_id": 19717632,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787597100000,
+    "league_partido": "F2",
+    "league_name": "Ligue 2",
+    "country": "France",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Reims",
+    "awayteam": "Annecy",
+    "home_league_domestica": "F2",
+    "away_league_domestica": "F2",
+    "home_dec_odds": 1.8,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198654286-1802358682~4/5",
+    "away_dec_odds": 1.8,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198654286-1802358682~4/5",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_team_all_window": {
+          "num_matches": "1/2",
+          "percent": 50
+        },
+        "away_team_away_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "0/2",
+          "percent": 0
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220073,
+    "external_id": 19722194,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787598000000,
+    "league_partido": "E0",
+    "league_name": "Premier League",
+    "country": "England",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Fulham",
+    "awayteam": "Chelsea",
+    "home_league_domestica": "E0",
+    "away_league_domestica": "E0",
+    "home_dec_odds": 1.615,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=196563282-1533385312~8/13",
+    "away_dec_odds": 1.615,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=196563282-1533385312~8/13",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "10/19",
+          "percent": 53
+        },
+        "home_team_all_window": {
+          "num_matches": "20/38",
+          "percent": 53
+        },
+        "away_team_away_window": {
+          "num_matches": "13/19",
+          "percent": 68
+        },
+        "away_team_all_window": {
+          "num_matches": "24/38",
+          "percent": 63
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220168,
+    "external_id": 19736837,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787598900000,
+    "league_partido": "P1",
+    "league_name": "Portugese Liga NOS",
+    "country": "Portugal",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Gil Vicente",
+    "awayteam": "Casa Pia",
+    "home_league_domestica": "P1",
+    "away_league_domestica": "P1",
+    "home_dec_odds": 2.1,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199039439-1842994739~11/10",
+    "away_dec_odds": 2.1,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199039439-1842994739~11/10",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "home_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_away_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "0/2",
+          "percent": 0
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220392,
+    "external_id": 19732726,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787599800000,
+    "league_partido": "SP1",
+    "league_name": "La Liga",
+    "country": "Spain",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Malaga",
+    "awayteam": "Deportivo A Coruña",
+    "home_league_domestica": "SP1",
+    "away_league_domestica": "SP1",
+    "home_dec_odds": 2.05,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=197219353-1875028013~21/20",
+    "away_dec_odds": 2.05,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=197219353-1875028013~21/20",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "home_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_away_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "1/1",
+          "percent": 100
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220194,
+    "external_id": 19745114,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787599800000,
+    "league_partido": "SP2",
+    "league_name": "Segunda Division",
+    "country": "Spain",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Granada",
+    "awayteam": "Mallorca",
+    "home_league_domestica": "SP2",
+    "away_league_domestica": "SP2",
+    "home_dec_odds": 2,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198725878-1932112205~1/1",
+    "away_dec_odds": 2,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198725878-1932112205~1/1",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "home_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "away_team_away_window": {
+          "num_matches": "0/0",
+          "percent": 0
+        },
+        "away_team_all_window": {
+          "num_matches": "0/1",
+          "percent": 0
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 219995,
+    "external_id": 19636688,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787608800000,
+    "league_partido": "ARG1",
+    "league_name": "Primera Division",
+    "country": "Argentina",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Tigre",
+    "awayteam": "Central Cordoba SdE",
+    "home_league_domestica": "ARG1",
+    "away_league_domestica": "ARG1",
+    "home_dec_odds": 2.5,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029642-1843640330~6/4",
+    "away_dec_odds": 2.5,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029642-1843640330~6/4",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "5/10",
+          "percent": 50
+        },
+        "home_team_all_window": {
+          "num_matches": "10/21",
+          "percent": 48
+        },
+        "away_team_away_window": {
+          "num_matches": "2/10",
+          "percent": 20
+        },
+        "away_team_all_window": {
+          "num_matches": "5/21",
+          "percent": 24
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220436,
+    "external_id": 19667200,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787610600000,
+    "league_partido": "BR2",
+    "league_name": "Serie B",
+    "country": "Brazil",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Recife",
+    "awayteam": "América Mineiro",
+    "home_league_domestica": "BR2",
+    "away_league_domestica": "BR2",
+    "home_dec_odds": 1.909,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198646940-1802381172~10/11",
+    "away_dec_odds": 1.909,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198646940-1802381172~10/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "9/12",
+          "percent": 75
+        },
+        "home_team_all_window": {
+          "num_matches": "14/23",
+          "percent": 61
+        },
+        "away_team_away_window": {
+          "num_matches": "5/12",
+          "percent": 42
+        },
+        "away_team_all_window": {
+          "num_matches": "12/23",
+          "percent": 52
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220437,
+    "external_id": 19667205,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787610600000,
+    "league_partido": "BR2",
+    "league_name": "Serie B",
+    "country": "Brazil",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Athletic Club",
+    "awayteam": "Novorizontino",
+    "home_league_domestica": "BR2",
+    "away_league_domestica": "BR2",
+    "home_dec_odds": 2,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198646935-1802363962~1/1",
+    "away_dec_odds": 2,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198646935-1802363962~1/1",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "5/12",
+          "percent": 42
+        },
+        "home_team_all_window": {
+          "num_matches": "13/23",
+          "percent": 57
+        },
+        "away_team_away_window": {
+          "num_matches": "4/12",
+          "percent": 33
+        },
+        "away_team_all_window": {
+          "num_matches": "10/23",
+          "percent": 44
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220012,
+    "external_id": 19621848,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787612400000,
+    "league_partido": "BR1",
+    "league_name": "Serie A",
+    "country": "Brazil",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Botafogo FR",
+    "awayteam": "Athletico PR",
+    "home_league_domestica": "BR1",
+    "away_league_domestica": "BR1",
+    "home_dec_odds": 1.8,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198646827-1802407739~4/5",
+    "away_dec_odds": 1.8,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198646827-1802407739~4/5",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "7/10",
+          "percent": 70
+        },
+        "home_team_all_window": {
+          "num_matches": "16/22",
+          "percent": 73
+        },
+        "away_team_away_window": {
+          "num_matches": "5/11",
+          "percent": 46
+        },
+        "away_team_all_window": {
+          "num_matches": "11/23",
+          "percent": 48
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220095,
+    "external_id": 19664019,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787616000000,
+    "league_partido": "ECU1",
+    "league_name": "Liga Pro",
+    "country": "Ecuador",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Libertad",
+    "awayteam": "Macará",
+    "home_league_domestica": "ECU1",
+    "away_league_domestica": "ECU1",
+    "home_dec_odds": 1.909,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198650205-1802024482~10/11",
+    "away_dec_odds": 1.909,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=198650205-1802024482~10/11",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "5/12",
+          "percent": 42
+        },
+        "home_team_all_window": {
+          "num_matches": "12/25",
+          "percent": 48
+        },
+        "away_team_away_window": {
+          "num_matches": "6/12",
+          "percent": 50
+        },
+        "away_team_all_window": {
+          "num_matches": "12/25",
+          "percent": 48
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220229,
+    "external_id": 19636680,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787616900000,
+    "league_partido": "ARG1",
+    "league_name": "Primera Division",
+    "country": "Argentina",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Lanús",
+    "awayteam": "Argentinos Juniors",
+    "home_league_domestica": "ARG1",
+    "away_league_domestica": "ARG1",
+    "home_dec_odds": 2.1,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029651-1843654928~11/10",
+    "away_dec_odds": 2.1,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029651-1843654928~11/10",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "3/11",
+          "percent": 27
+        },
+        "home_team_all_window": {
+          "num_matches": "8/22",
+          "percent": 36
+        },
+        "away_team_away_window": {
+          "num_matches": "5/10",
+          "percent": 50
+        },
+        "away_team_all_window": {
+          "num_matches": "10/24",
+          "percent": 42
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  },
+  {
+    "fixture_id": 220230,
+    "external_id": 19636683,
+    "date_epoch_ms": 1787554800000,
+    "kickoff_epoch_ms": 1787616900000,
+    "league_partido": "ARG1",
+    "league_name": "Primera Division",
+    "country": "Argentina",
+    "es_copa": false,
+    "premium": false,
+    "hometeam": "Talleres Córdoba",
+    "awayteam": "Rosario Central",
+    "home_league_domestica": "ARG1",
+    "away_league_domestica": "ARG1",
+    "home_dec_odds": 2,
+    "home_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029653-1843678630~1/1",
+    "away_dec_odds": 2,
+    "away_bet_url": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_03330390&bet=1&bs=199029653-1843678630~1/1",
+    "stats": {
+      "BTTS": {
+        "home_team_home_window": {
+          "num_matches": "4/10",
+          "percent": 40
+        },
+        "home_team_all_window": {
+          "num_matches": "10/22",
+          "percent": 46
+        },
+        "away_team_away_window": {
+          "num_matches": "6/12",
+          "percent": 50
+        },
+        "away_team_all_window": {
+          "num_matches": "14/24",
+          "percent": 58
+        },
+        "home_data_missing": false,
+        "away_data_missing": false
+      }
+    }
+  }
+]
