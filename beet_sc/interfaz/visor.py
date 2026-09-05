@@ -6,21 +6,6 @@ Punto de entrada de la aplicación BEET. Ventana principal con la vista de fixtu
 
 import sys, subprocess
 
-def _instalar_si_falta():
-    import importlib
-    faltantes = []
-    for paquete, modulo in (("PyQt6", "PyQt6"), ("requests", "requests")):
-        try:
-            importlib.import_module(modulo)
-        except ImportError:
-            faltantes.append(paquete)
-    if faltantes:
-        print(f"Instalando dependencias: {', '.join(faltantes)} …")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", *faltantes])
-        print("✅ Instalación completa. Iniciando visor…\n")
-
-_instalar_si_falta()
-
 from pathlib import Path
 _RAIZ = Path(__file__).resolve().parent.parent
 for _carpeta in ("pipeline", "persistencia", "scraping"):
@@ -51,8 +36,7 @@ def _cargar_fuentes_propias():
         print("[fuentes] no se pudo cargar Manrope, se usará el fallback del sistema")
         return
     familias = QFontDatabase.applicationFontFamilies(id_fuente)
-    print(f"[fuentes] Manrope cargada como: {familias}")
-
+    
 
 class VisorBeet(QMainWindow):
     def __init__(self):
@@ -90,12 +74,3 @@ def excepthook(exc_type, exc_value, exc_tb):
     print("Excepción no capturada:")
     traceback.print_exception(exc_type, exc_value, exc_tb)
 
-if __name__ == "__main__":
-    sys.excepthook = excepthook
-    app = QApplication(sys.argv)
-    app.setStyle("Fusion")
-    _cargar_fuentes_propias()
-    app.setStyleSheet(QSS)
-    win = VisorBeet()
-    win.show()
-    sys.exit(app.exec())

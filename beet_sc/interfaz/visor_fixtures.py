@@ -697,7 +697,7 @@ class VisorFixtures(QWidget):
         grupo_ids = [r["external_id"] for r in grupo if r.get("external_id")]
         
         if clave_toggle not in self._colapsado:
-            self._colapsado[clave_toggle] = (estado_partido_clave != "en_curso")
+            self._colapsado[clave_toggle] = True
         
         header = self._crear_header_colapsable(
             f"{titulo_seccion}  ({len(grupo)})", color_seccion, clave_toggle,

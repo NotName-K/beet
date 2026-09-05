@@ -9,16 +9,15 @@ description = "Modelo de predicción y detección de apuestas deportivas"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    # 🚀 NUEVO: SDK oficial de Google para Gemini (soporta multi-hilo y visión)
-    "google-genai>=0.1.0",
-    
-    # UI y utilidades base
     "PyQt6>=6.5.0",
+    "requests>=2.31.0",
+    "urllib3>=2.0.0",
+    "SQLAlchemy>=2.0.0",
+    "pydantic>=2.0.0",
+    "playwright>=1.40.0",
     "numpy>=1.24.0",
     "python-dotenv>=1.0.0",
-    
-    # ❌ ELIMINADOS: opencv-python, pillow, pytesseract, pdfplumber
-    # Ya no son necesarios porque Gemini lee las imágenes y PDFs nativamente.
+    "google-genai>=0.1.0",
 ]
 
 [project.optional-dependencies]
@@ -28,9 +27,9 @@ dev = [
     "ruff>=0.1.0",
 ]
 
-[project.scripts]
-beet-visor = "beet.ui.main:main"
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
 
 [tool.pytest.ini_options]
-testpaths = ["beet/tests"]
+testpaths = ["tests"]
 python_files = "test_*.py"
